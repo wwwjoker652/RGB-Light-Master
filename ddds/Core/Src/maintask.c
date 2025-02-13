@@ -725,6 +725,16 @@ void mode5(void){
 				esp8266_send_cmd("AT+CIPSEND=0,11","OK",50);
 				esp8266_send_cmd("Exiting...\n","OK",50);
 				wifiswitch();
+			}else if(strstr((const char*)my_order,(const char*)"<set>"))
+			{
+				Uart2_Rx_Cnt=0;
+				memset(RxBuffer,0x00,sizeof(RxBuffer));
+				memset(RxBuffer,0x00,sizeof(my_order));	
+				__HAL_TIM_SET_COMPARE(&htim3,TIM_CHANNEL_3,0);
+				OLED_Clear();
+				esp8266_send_cmd("AT+CIPSEND=0,4","OK",50);
+				esp8266_send_cmd("OK!\n","OK",50);
+				setvlight();
 			}
 		}
 	}

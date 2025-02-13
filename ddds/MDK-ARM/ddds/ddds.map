@@ -284,11 +284,11 @@ Section Cross References
     maintask.o(i.mode5) refers to oled.o(i.OLED_ShowNum) for OLED_ShowNum
     maintask.o(i.mode5) refers to maintask.o(i.Button_LongPress) for Button_LongPress
     maintask.o(i.mode5) refers to maintask.o(i.switchmode) for switchmode
-    maintask.o(i.mode5) refers to maintask.o(i.setvlight) for setvlight
     maintask.o(i.mode5) refers to strstr.o(.text) for strstr
     maintask.o(i.mode5) refers to rt_memclr.o(.text) for __aeabi_memclr
     maintask.o(i.mode5) refers to esp.o(i.esp8266_send_cmd) for esp8266_send_cmd
     maintask.o(i.mode5) refers to maintask.o(i.wifiswitch) for wifiswitch
+    maintask.o(i.mode5) refers to maintask.o(i.setvlight) for setvlight
     maintask.o(i.mode5) refers to adc.o(.bss) for hadc1
     maintask.o(i.mode5) refers to maintask.o(.data) for .data
     maintask.o(i.mode5) refers to tim.o(.bss) for htim3
@@ -2268,32 +2268,32 @@ Image Symbol Table
     i.mode3                                  0x0800477c   Section        0  maintask.o(i.mode3)
     i.mode4                                  0x08004924   Section        0  maintask.o(i.mode4)
     i.mode5                                  0x08004b14   Section        0  maintask.o(i.mode5)
-    i.mode6                                  0x08004cb0   Section        0  maintask.o(i.mode6)
-    i.mode7                                  0x08004e30   Section        0  maintask.o(i.mode7)
-    i.mode8                                  0x08004fa8   Section        0  maintask.o(i.mode8)
-    i.mode8_pre                              0x0800513c   Section        0  maintask.o(i.mode8_pre)
-    i.setdht                                 0x08005154   Section        0  maintask.o(i.setdht)
-    i.setperiod                              0x08005330   Section        0  maintask.o(i.setperiod)
-    i.setpwm1                                0x08005618   Section        0  maintask.o(i.setpwm1)
-    i.setrgb                                 0x08005804   Section        0  maintask.o(i.setrgb)
-    i.setrtc                                 0x08005bc8   Section        0  maintask.o(i.setrtc)
-    i.setvlight                              0x08005dcc   Section        0  maintask.o(i.setvlight)
-    i.switchmode                             0x08005f98   Section        0  maintask.o(i.switchmode)
-    i.u2_printf                              0x080061b4   Section        0  esp.o(i.u2_printf)
-    i.wifiswitch                             0x08006204   Section        0  maintask.o(i.wifiswitch)
-    .constdata                               0x080064e8   Section     7696  oled.o(.constdata)
-    .constdata                               0x080082f8   Section       44  my_rtc.o(.constdata)
-    .constdata                               0x08008324   Section       18  stm32f1xx_hal_rcc.o(.constdata)
-    aPredivFactorTable                       0x08008324   Data           2  stm32f1xx_hal_rcc.o(.constdata)
-    aPLLMULFactorTable                       0x08008326   Data          16  stm32f1xx_hal_rcc.o(.constdata)
-    .constdata                               0x08008336   Section       18  stm32f1xx_hal_rcc_ex.o(.constdata)
-    aPredivFactorTable                       0x08008336   Data           2  stm32f1xx_hal_rcc_ex.o(.constdata)
-    aPLLMULFactorTable                       0x08008338   Data          16  stm32f1xx_hal_rcc_ex.o(.constdata)
-    .constdata                               0x08008348   Section       16  system_stm32f1xx.o(.constdata)
-    .constdata                               0x08008358   Section        8  system_stm32f1xx.o(.constdata)
-    .constdata                               0x08008360   Section       17  __printf_flags_wp.o(.constdata)
-    maptable                                 0x08008360   Data          17  __printf_flags_wp.o(.constdata)
-    .constdata                               0x08008371   Section       12  _monlen.o(.constdata)
+    i.mode6                                  0x08004d0c   Section        0  maintask.o(i.mode6)
+    i.mode7                                  0x08004e8c   Section        0  maintask.o(i.mode7)
+    i.mode8                                  0x08005004   Section        0  maintask.o(i.mode8)
+    i.mode8_pre                              0x08005198   Section        0  maintask.o(i.mode8_pre)
+    i.setdht                                 0x080051b0   Section        0  maintask.o(i.setdht)
+    i.setperiod                              0x0800538c   Section        0  maintask.o(i.setperiod)
+    i.setpwm1                                0x08005674   Section        0  maintask.o(i.setpwm1)
+    i.setrgb                                 0x08005860   Section        0  maintask.o(i.setrgb)
+    i.setrtc                                 0x08005c24   Section        0  maintask.o(i.setrtc)
+    i.setvlight                              0x08005e28   Section        0  maintask.o(i.setvlight)
+    i.switchmode                             0x08005ff4   Section        0  maintask.o(i.switchmode)
+    i.u2_printf                              0x08006210   Section        0  esp.o(i.u2_printf)
+    i.wifiswitch                             0x08006260   Section        0  maintask.o(i.wifiswitch)
+    .constdata                               0x08006544   Section     7696  oled.o(.constdata)
+    .constdata                               0x08008354   Section       44  my_rtc.o(.constdata)
+    .constdata                               0x08008380   Section       18  stm32f1xx_hal_rcc.o(.constdata)
+    aPredivFactorTable                       0x08008380   Data           2  stm32f1xx_hal_rcc.o(.constdata)
+    aPLLMULFactorTable                       0x08008382   Data          16  stm32f1xx_hal_rcc.o(.constdata)
+    .constdata                               0x08008392   Section       18  stm32f1xx_hal_rcc_ex.o(.constdata)
+    aPredivFactorTable                       0x08008392   Data           2  stm32f1xx_hal_rcc_ex.o(.constdata)
+    aPLLMULFactorTable                       0x08008394   Data          16  stm32f1xx_hal_rcc_ex.o(.constdata)
+    .constdata                               0x080083a4   Section       16  system_stm32f1xx.o(.constdata)
+    .constdata                               0x080083b4   Section        8  system_stm32f1xx.o(.constdata)
+    .constdata                               0x080083bc   Section       17  __printf_flags_wp.o(.constdata)
+    maptable                                 0x080083bc   Data          17  __printf_flags_wp.o(.constdata)
+    .constdata                               0x080083cd   Section       12  _monlen.o(.constdata)
     .data                                    0x20000000   Section        5  dht11.o(.data)
     .data                                    0x20000008   Section       28  flappy_bird.o(.data)
     frame_count                              0x20000020   Data           4  flappy_bird.o(.data)
@@ -2634,33 +2634,33 @@ Image Symbol Table
     mode2                                    0x080045a1   Thumb Code   358  maintask.o(i.mode2)
     mode3                                    0x0800477d   Thumb Code   302  maintask.o(i.mode3)
     mode4                                    0x08004925   Thumb Code   376  maintask.o(i.mode4)
-    mode5                                    0x08004b15   Thumb Code   312  maintask.o(i.mode5)
-    mode6                                    0x08004cb1   Thumb Code   270  maintask.o(i.mode6)
-    mode7                                    0x08004e31   Thumb Code   274  maintask.o(i.mode7)
-    mode8                                    0x08004fa9   Thumb Code   290  maintask.o(i.mode8)
-    mode8_pre                                0x0800513d   Thumb Code    20  maintask.o(i.mode8_pre)
-    setdht                                   0x08005155   Thumb Code   348  maintask.o(i.setdht)
-    setperiod                                0x08005331   Thumb Code   592  maintask.o(i.setperiod)
-    setpwm1                                  0x08005619   Thumb Code   356  maintask.o(i.setpwm1)
-    setrgb                                   0x08005805   Thumb Code   796  maintask.o(i.setrgb)
-    setrtc                                   0x08005bc9   Thumb Code   470  maintask.o(i.setrtc)
-    setvlight                                0x08005dcd   Thumb Code   332  maintask.o(i.setvlight)
-    switchmode                               0x08005f99   Thumb Code   442  maintask.o(i.switchmode)
-    u2_printf                                0x080061b5   Thumb Code    74  esp.o(i.u2_printf)
-    wifiswitch                               0x08006205   Thumb Code   610  maintask.o(i.wifiswitch)
-    asc2_0806                                0x080064e8   Data         552  oled.o(.constdata)
-    asc2_1206                                0x08006710   Data        1140  oled.o(.constdata)
-    asc2_1608                                0x08006b84   Data        1520  oled.o(.constdata)
-    asc2_2412                                0x08007174   Data        3420  oled.o(.constdata)
-    Hzk1                                     0x08007ed0   Data         352  oled.o(.constdata)
-    Hzk2                                     0x08008030   Data          72  oled.o(.constdata)
-    Hzk3                                     0x08008078   Data         128  oled.o(.constdata)
-    Hzk4                                     0x080080f8   Data         512  oled.o(.constdata)
-    AHBPrescTable                            0x08008348   Data          16  system_stm32f1xx.o(.constdata)
-    APBPrescTable                            0x08008358   Data           8  system_stm32f1xx.o(.constdata)
-    _monlen                                  0x08008371   Data          12  _monlen.o(.constdata)
-    Region$$Table$$Base                      0x08008380   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x080083a0   Number         0  anon$$obj.o(Region$$Table)
+    mode5                                    0x08004b15   Thumb Code   370  maintask.o(i.mode5)
+    mode6                                    0x08004d0d   Thumb Code   270  maintask.o(i.mode6)
+    mode7                                    0x08004e8d   Thumb Code   274  maintask.o(i.mode7)
+    mode8                                    0x08005005   Thumb Code   290  maintask.o(i.mode8)
+    mode8_pre                                0x08005199   Thumb Code    20  maintask.o(i.mode8_pre)
+    setdht                                   0x080051b1   Thumb Code   348  maintask.o(i.setdht)
+    setperiod                                0x0800538d   Thumb Code   592  maintask.o(i.setperiod)
+    setpwm1                                  0x08005675   Thumb Code   356  maintask.o(i.setpwm1)
+    setrgb                                   0x08005861   Thumb Code   796  maintask.o(i.setrgb)
+    setrtc                                   0x08005c25   Thumb Code   470  maintask.o(i.setrtc)
+    setvlight                                0x08005e29   Thumb Code   332  maintask.o(i.setvlight)
+    switchmode                               0x08005ff5   Thumb Code   442  maintask.o(i.switchmode)
+    u2_printf                                0x08006211   Thumb Code    74  esp.o(i.u2_printf)
+    wifiswitch                               0x08006261   Thumb Code   610  maintask.o(i.wifiswitch)
+    asc2_0806                                0x08006544   Data         552  oled.o(.constdata)
+    asc2_1206                                0x0800676c   Data        1140  oled.o(.constdata)
+    asc2_1608                                0x08006be0   Data        1520  oled.o(.constdata)
+    asc2_2412                                0x080071d0   Data        3420  oled.o(.constdata)
+    Hzk1                                     0x08007f2c   Data         352  oled.o(.constdata)
+    Hzk2                                     0x0800808c   Data          72  oled.o(.constdata)
+    Hzk3                                     0x080080d4   Data         128  oled.o(.constdata)
+    Hzk4                                     0x08008154   Data         512  oled.o(.constdata)
+    AHBPrescTable                            0x080083a4   Data          16  system_stm32f1xx.o(.constdata)
+    APBPrescTable                            0x080083b4   Data           8  system_stm32f1xx.o(.constdata)
+    _monlen                                  0x080083cd   Data          12  _monlen.o(.constdata)
+    Region$$Table$$Base                      0x080083dc   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x080083fc   Number         0  anon$$obj.o(Region$$Table)
     Data                                     0x20000000   Data           5  dht11.o(.data)
     bird_y                                   0x20000008   Data           4  flappy_bird.o(.data)
     bird_speed                               0x2000000c   Data           4  flappy_bird.o(.data)
@@ -2716,9 +2716,9 @@ Memory Map of the image
 
   Image Entry point : 0x080000ed
 
-  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x00008454, Max: 0x00010000, ABSOLUTE)
+  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x000084b0, Max: 0x00010000, ABSOLUTE)
 
-    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x000083a0, Max: 0x00010000, ABSOLUTE)
+    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x000083fc, Max: 0x00010000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -2967,42 +2967,42 @@ Memory Map of the image
     0x080045a0   0x080045a0   0x000001dc   Code   RO          531    i.mode2             maintask.o
     0x0800477c   0x0800477c   0x000001a8   Code   RO          532    i.mode3             maintask.o
     0x08004924   0x08004924   0x000001f0   Code   RO          533    i.mode4             maintask.o
-    0x08004b14   0x08004b14   0x0000019c   Code   RO          534    i.mode5             maintask.o
-    0x08004cb0   0x08004cb0   0x00000180   Code   RO          535    i.mode6             maintask.o
-    0x08004e30   0x08004e30   0x00000178   Code   RO          536    i.mode7             maintask.o
-    0x08004fa8   0x08004fa8   0x00000194   Code   RO          537    i.mode8             maintask.o
-    0x0800513c   0x0800513c   0x00000018   Code   RO          538    i.mode8_pre         maintask.o
-    0x08005154   0x08005154   0x000001dc   Code   RO          539    i.setdht            maintask.o
-    0x08005330   0x08005330   0x000002e8   Code   RO          540    i.setperiod         maintask.o
-    0x08005618   0x08005618   0x000001ec   Code   RO          541    i.setpwm1           maintask.o
-    0x08005804   0x08005804   0x000003c4   Code   RO          542    i.setrgb            maintask.o
-    0x08005bc8   0x08005bc8   0x00000204   Code   RO          543    i.setrtc            maintask.o
-    0x08005dcc   0x08005dcc   0x000001cc   Code   RO          544    i.setvlight         maintask.o
-    0x08005f98   0x08005f98   0x0000021c   Code   RO          545    i.switchmode        maintask.o
-    0x080061b4   0x080061b4   0x00000050   Code   RO          346    i.u2_printf         esp.o
-    0x08006204   0x08006204   0x000002e4   Code   RO          546    i.wifiswitch        maintask.o
-    0x080064e8   0x080064e8   0x00001e10   Data   RO           37    .constdata          oled.o
-    0x080082f8   0x080082f8   0x0000002c   Data   RO          713    .constdata          my_rtc.o
-    0x08008324   0x08008324   0x00000012   Data   RO         1651    .constdata          stm32f1xx_hal_rcc.o
-    0x08008336   0x08008336   0x00000012   Data   RO         1743    .constdata          stm32f1xx_hal_rcc_ex.o
-    0x08008348   0x08008348   0x00000010   Data   RO         4487    .constdata          system_stm32f1xx.o
-    0x08008358   0x08008358   0x00000008   Data   RO         4488    .constdata          system_stm32f1xx.o
-    0x08008360   0x08008360   0x00000011   Data   RO         4547    .constdata          c_w.l(__printf_flags_wp.o)
-    0x08008371   0x08008371   0x0000000c   Data   RO         4588    .constdata          c_w.l(_monlen.o)
-    0x0800837d   0x0800837d   0x00000003   PAD
-    0x08008380   0x08008380   0x00000020   Data   RO         4747    Region$$Table       anon$$obj.o
+    0x08004b14   0x08004b14   0x000001f8   Code   RO          534    i.mode5             maintask.o
+    0x08004d0c   0x08004d0c   0x00000180   Code   RO          535    i.mode6             maintask.o
+    0x08004e8c   0x08004e8c   0x00000178   Code   RO          536    i.mode7             maintask.o
+    0x08005004   0x08005004   0x00000194   Code   RO          537    i.mode8             maintask.o
+    0x08005198   0x08005198   0x00000018   Code   RO          538    i.mode8_pre         maintask.o
+    0x080051b0   0x080051b0   0x000001dc   Code   RO          539    i.setdht            maintask.o
+    0x0800538c   0x0800538c   0x000002e8   Code   RO          540    i.setperiod         maintask.o
+    0x08005674   0x08005674   0x000001ec   Code   RO          541    i.setpwm1           maintask.o
+    0x08005860   0x08005860   0x000003c4   Code   RO          542    i.setrgb            maintask.o
+    0x08005c24   0x08005c24   0x00000204   Code   RO          543    i.setrtc            maintask.o
+    0x08005e28   0x08005e28   0x000001cc   Code   RO          544    i.setvlight         maintask.o
+    0x08005ff4   0x08005ff4   0x0000021c   Code   RO          545    i.switchmode        maintask.o
+    0x08006210   0x08006210   0x00000050   Code   RO          346    i.u2_printf         esp.o
+    0x08006260   0x08006260   0x000002e4   Code   RO          546    i.wifiswitch        maintask.o
+    0x08006544   0x08006544   0x00001e10   Data   RO           37    .constdata          oled.o
+    0x08008354   0x08008354   0x0000002c   Data   RO          713    .constdata          my_rtc.o
+    0x08008380   0x08008380   0x00000012   Data   RO         1651    .constdata          stm32f1xx_hal_rcc.o
+    0x08008392   0x08008392   0x00000012   Data   RO         1743    .constdata          stm32f1xx_hal_rcc_ex.o
+    0x080083a4   0x080083a4   0x00000010   Data   RO         4487    .constdata          system_stm32f1xx.o
+    0x080083b4   0x080083b4   0x00000008   Data   RO         4488    .constdata          system_stm32f1xx.o
+    0x080083bc   0x080083bc   0x00000011   Data   RO         4547    .constdata          c_w.l(__printf_flags_wp.o)
+    0x080083cd   0x080083cd   0x0000000c   Data   RO         4588    .constdata          c_w.l(_monlen.o)
+    0x080083d9   0x080083d9   0x00000003   PAD
+    0x080083dc   0x080083dc   0x00000020   Data   RO         4747    Region$$Table       anon$$obj.o
 
 
-    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x080083a0, Size: 0x00000ff0, Max: 0x00005000, ABSOLUTE)
+    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x080083fc, Size: 0x00000ff0, Max: 0x00005000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x20000000   0x080083a0   0x00000005   Data   RW          288    .data               dht11.o
-    0x20000005   0x080083a5   0x00000003   PAD
-    0x20000008   0x080083a8   0x0000001c   Data   RW          415    .data               flappy_bird.o
-    0x20000024   0x080083c4   0x00000080   Data   RW          549    .data               maintask.o
-    0x200000a4   0x08008444   0x0000000c   Data   RW         1488    .data               stm32f1xx_hal.o
-    0x200000b0   0x08008450   0x00000004   Data   RW         4489    .data               system_stm32f1xx.o
+    0x20000000   0x080083fc   0x00000005   Data   RW          288    .data               dht11.o
+    0x20000005   0x08008401   0x00000003   PAD
+    0x20000008   0x08008404   0x0000001c   Data   RW          415    .data               flappy_bird.o
+    0x20000024   0x08008420   0x00000080   Data   RW          549    .data               maintask.o
+    0x200000a4   0x080084a0   0x0000000c   Data   RW         1488    .data               stm32f1xx_hal.o
+    0x200000b0   0x080084ac   0x00000004   Data   RW         4489    .data               system_stm32f1xx.o
     0x200000b4        -       0x00000480   Zero   RW           36    .bss                oled.o
     0x20000534        -       0x00000024   Zero   RW          414    .bss                flappy_bird.o
     0x20000558        -       0x0000013c   Zero   RW          547    .bss                maintask.o
@@ -3014,7 +3014,7 @@ Memory Map of the image
     0x2000087c        -       0x000000e4   Zero   RW         4558    .bss                c_w.l(rand.o)
     0x20000960        -       0x0000002c   Zero   RW         4572    .bss                c_w.l(localtime.o)
     0x2000098c        -       0x00000060   Zero   RW         4674    .bss                c_w.l(libspace.o)
-    0x200009ec   0x08008454   0x00000004   PAD
+    0x200009ec   0x080084b0   0x00000004   PAD
     0x200009f0        -       0x00000200   Zero   RW            2    HEAP                startup_stm32f103xb.o
     0x20000bf0        -       0x00000400   Zero   RW            1    STACK               startup_stm32f103xb.o
 
@@ -3033,7 +3033,7 @@ Image component sizes
        164         12          0          0          0        895   gpio.o
        156         26          0          0         84       1473   i2c.o
        192          0          0          0          0       2028   main.o
-      9850       2120          0        128        316      19127   maintask.o
+      9942       2154          0        128        316      19159   maintask.o
        256         20         44          0          0       2884   my_rtc.o
       1582         58       7696          0       1152     473589   oled.o
         80         20          0          0         20       1283   rtc.o
@@ -3060,7 +3060,7 @@ Image component sizes
        184         20          0          0         72       1526   usart.o
 
     ----------------------------------------------------------------------
-     23422       3082       8068        180       3528     614491   Object Totals
+     23514       3116       8068        180       3528     614523   Object Totals
          0          0         32          0          0          0   (incl. Generated)
         30          0          0          3          0          0   (incl. Padding)
 
@@ -3130,15 +3130,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-     25596       3170       8100        180       3900     607319   Grand Totals
-     25596       3170       8100        180       3900     607319   ELF Image Totals
-     25596       3170       8100        180          0          0   ROM Totals
+     25688       3204       8100        180       3900     607351   Grand Totals
+     25688       3204       8100        180       3900     607351   ELF Image Totals
+     25688       3204       8100        180          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                33696 (  32.91kB)
+    Total RO  Size (Code + RO Data)                33788 (  33.00kB)
     Total RW  Size (RW Data + ZI Data)              4080 (   3.98kB)
-    Total ROM Size (Code + RO Data + RW Data)      33876 (  33.08kB)
+    Total ROM Size (Code + RO Data + RW Data)      33968 (  33.17kB)
 
 ==============================================================================
 
