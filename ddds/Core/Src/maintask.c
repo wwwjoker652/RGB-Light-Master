@@ -81,12 +81,12 @@ void switchmode(void){
 			OLED_ShowString(80, 20, "Mode5", 16, modes[4]);
 			OLED_ShowString(80, 40, "Mode6", 16, modes[5]);
 			OLED_Refresh();
-			if (Button_ShortPress(GPIOA, GPIO_PIN_12)){
+			if (Button_ShortPress(GPIOA, GPIO_PIN_11)){
 				modes[choice - 1] = 1;
 				choice++;
 				modes[choice - 1] = 0;
 			}
-			if (Button_ShortPress(GPIOA, GPIO_PIN_11)){
+			if (Button_ShortPress(GPIOA, GPIO_PIN_12)){
 				if(choice == 1){
 					choice = 2;
 				}
@@ -107,7 +107,7 @@ void switchmode(void){
 			OLED_ShowString(0, 40, "Wifi", 16, modes[8]);
 			OLED_ShowString(80, 0, "Game", 16, modes[9]);
 			OLED_Refresh();
-			if (Button_ShortPress(GPIOA, GPIO_PIN_12)){
+			if (Button_ShortPress(GPIOA, GPIO_PIN_11)){
 				if(choice == 10){
 				choice = 9;
 				}
@@ -115,7 +115,7 @@ void switchmode(void){
 				choice++;
 				modes[choice - 1] = 0;
 			}
-			if (Button_ShortPress(GPIOA, GPIO_PIN_11)){
+			if (Button_ShortPress(GPIOA, GPIO_PIN_12)){
 				modes[choice - 1] = 1;
 				choice--;
 				modes[choice - 1] = 0;
@@ -1394,7 +1394,7 @@ void setrtc(void){
 			}
 		}
 		OLED_Refresh();
-		if (Button_LongPress(GPIOA, GPIO_PIN_11)) {
+		if (Button_LongPress(GPIOA, GPIO_PIN_12)) {
 			position++;
 			if(position == 5){
 				position = 0;

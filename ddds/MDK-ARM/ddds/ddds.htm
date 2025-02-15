@@ -3,7 +3,7 @@
 <title>Static Call Graph - [ddds\ddds.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image ddds\ddds.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Thu Feb 13 17:16:38 2025
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Sat Feb 15 10:45:51 2025
 <BR><P>
 <H3>Maximum Stack Usage =        256 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -25,23 +25,23 @@ Mutually Recursive functions
  <LI><a href="#[4]">NMI_Handler</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[4]">NMI_Handler</a><BR>
  <LI><a href="#[b3]">UART_EndRxTransfer</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[b3]">UART_EndRxTransfer</a><BR>
  <LI><a href="#[8]">UsageFault_Handler</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[8]">UsageFault_Handler</a><BR>
- <LI><a href="#[e6]">setrtc</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[f5]">init</a><BR>
- <LI><a href="#[fd]">setrgb</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[fd]">setrgb</a><BR>
  <LI><a href="#[fc]">mode8</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[f0]">wifiswitch</a><BR>
+ <LI><a href="#[fd]">setrgb</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[fd]">setrgb</a><BR>
  <LI><a href="#[f4]">switchmode</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[f5]">init</a><BR>
- <LI><a href="#[e7]">entermode</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[ef]">mode8_pre</a><BR>
+ <LI><a href="#[e7]">entermode</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[f0]">wifiswitch</a><BR>
  <LI><a href="#[ee]">mode7</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[f0]">wifiswitch</a><BR>
- <LI><a href="#[fb]">setdht</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[ed]">mode6</a><BR>
  <LI><a href="#[ed]">mode6</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[f0]">wifiswitch</a><BR>
- <LI><a href="#[fa]">setvlight</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[ec]">mode5</a><BR>
+ <LI><a href="#[fb]">setdht</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[ed]">mode6</a><BR>
  <LI><a href="#[ec]">mode5</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[f0]">wifiswitch</a><BR>
+ <LI><a href="#[fa]">setvlight</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[ec]">mode5</a><BR>
  <LI><a href="#[eb]">mode4</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[f0]">wifiswitch</a><BR>
- <LI><a href="#[f8]">setpwm1</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[ea]">mode3</a><BR>
  <LI><a href="#[ea]">mode3</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[f0]">wifiswitch</a><BR>
- <LI><a href="#[f7]">setperiod</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[e9]">mode2</a><BR>
+ <LI><a href="#[f8]">setpwm1</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[ea]">mode3</a><BR>
  <LI><a href="#[e9]">mode2</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[f0]">wifiswitch</a><BR>
+ <LI><a href="#[f7]">setperiod</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[e9]">mode2</a><BR>
  <LI><a href="#[e8]">mode1</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[f0]">wifiswitch</a><BR>
- <LI><a href="#[7f]">fail</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[f0]">wifiswitch</a><BR>
+ <LI><a href="#[7f]">fail</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[f4]">switchmode</a><BR>
+ <LI><a href="#[e6]">setrtc</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[f5]">init</a><BR>
 </UL>
 <P>
 <H3>
@@ -467,7 +467,8 @@ Global Symbols
 <P><STRONG><a name="[f3]"></a>strstr</STRONG> (Thumb, 36 bytes, Stack size 12 bytes, strstr.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = strstr
 </UL>
-<BR>[Called By]<UL><LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setvlight
+<BR>[Called By]<UL><LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifiswitch
+<LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setvlight
 <LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setrgb
 <LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setpwm1
 <LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setperiod
@@ -481,7 +482,6 @@ Global Symbols
 <LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mode2
 <LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mode1
 <LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;init
-<LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifiswitch
 <LI><a href="#[f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;esp8266_send_cmd
 </UL>
 
@@ -505,7 +505,8 @@ Global Symbols
 <P><STRONG><a name="[126]"></a>_memcpy_lastbytes_aligned</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rt_memcpy_w.o(.text), UNUSED)
 
 <P><STRONG><a name="[c0]"></a>__aeabi_memclr</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, rt_memclr.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setvlight
+<BR><BR>[Called By]<UL><LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifiswitch
+<LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setvlight
 <LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setrgb
 <LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setpwm1
 <LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setperiod
@@ -520,7 +521,6 @@ Global Symbols
 <LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mode1
 <LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;init
 <LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UART_RxCpltCallback
-<LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifiswitch
 <LI><a href="#[f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;esp8266_send_cmd
 </UL>
 
@@ -671,7 +671,8 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_ReadPin
 <LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
 </UL>
-<BR>[Called By]<UL><LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setvlight
+<BR>[Called By]<UL><LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifiswitch
+<LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setvlight
 <LI><a href="#[e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setrtc
 <LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setrgb
 <LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setpwm1
@@ -687,7 +688,6 @@ Global Symbols
 <LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mode1
 <LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;init
 <LI><a href="#[e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;displayrtc
-<LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifiswitch
 <LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;switchmode
 <LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;fail
 </UL>
@@ -800,7 +800,7 @@ Global Symbols
 
 <P><STRONG><a name="[7b]"></a>Flappy_Bird_Game</STRONG> (Thumb, 52 bytes, Stack size 0 bytes, flappy_bird.o(i.Flappy_Bird_Game))
 <BR><BR>[Stack]<UL><LI>Max Depth = 216 + Unknown Stack Size
-<LI>Call Chain = Flappy_Bird_Game &rArr; fail &rArr;  wifiswitch (Cycle)
+<LI>Call Chain = Flappy_Bird_Game &rArr; fail &rArr;  switchmode (Cycle)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;fail
 <LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UpdateObstacles
@@ -815,7 +815,7 @@ Global Symbols
 
 <P><STRONG><a name="[81]"></a>Flappy_Bird_Init</STRONG> (Thumb, 100 bytes, Stack size 8 bytes, flappy_bird.o(i.Flappy_Bird_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 224 + Unknown Stack Size
-<LI>Call Chain = Flappy_Bird_Init &rArr; Flappy_Bird_Game &rArr; fail &rArr;  wifiswitch (Cycle)
+<LI>Call Chain = Flappy_Bird_Init &rArr; Flappy_Bird_Game &rArr; fail &rArr;  switchmode (Cycle)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ReadHighScore
 <LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;InitObstacles
@@ -915,7 +915,8 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
 </UL>
-<BR>[Called By]<UL><LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setvlight
+<BR>[Called By]<UL><LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifiswitch
+<LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setvlight
 <LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setrgb
 <LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setpwm1
 <LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setperiod
@@ -931,7 +932,6 @@ Global Symbols
 <LI><a href="#[e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;displayrtc
 <LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Display_Temperature_Humidity
 <LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Button_ShortPress
-<LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifiswitch
 <LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Button_LongPress
 <LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Flappy_Bird_Init
 <LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Flappy_Bird_Game
@@ -1059,6 +1059,7 @@ Global Symbols
 
 <P><STRONG><a name="[9d]"></a>HAL_PWR_EnableBkUpAccess</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, stm32f1xx_hal_pwr.o(i.HAL_PWR_EnableBkUpAccess))
 <BR><BR>[Called By]<UL><LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RTC_MspInit
+<LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
 <P><STRONG><a name="[84]"></a>HAL_RCCEx_GetPeriphCLKFreq</STRONG> (Thumb, 148 bytes, Stack size 8 bytes, stm32f1xx_hal_rcc_ex.o(i.HAL_RCCEx_GetPeriphCLKFreq))
@@ -1526,7 +1527,8 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OLED_Refresh
 </UL>
-<BR>[Called By]<UL><LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setvlight
+<BR>[Called By]<UL><LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifiswitch
+<LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setvlight
 <LI><a href="#[e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setrtc
 <LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setrgb
 <LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setpwm1
@@ -1542,7 +1544,6 @@ Global Symbols
 <LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mode1
 <LI><a href="#[e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;displayrtc
 <LI><a href="#[e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;beforeall
-<LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifiswitch
 <LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;switchmode
 <LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;fail
 <LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Flappy_Bird_Init
@@ -1600,7 +1601,8 @@ Global Symbols
 <LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_Stop
 <LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_Start
 </UL>
-<BR>[Called By]<UL><LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setvlight
+<BR>[Called By]<UL><LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifiswitch
+<LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setvlight
 <LI><a href="#[e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setrtc
 <LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setrgb
 <LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setpwm1
@@ -1617,7 +1619,6 @@ Global Symbols
 <LI><a href="#[e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;displayrtc
 <LI><a href="#[e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;beforeall
 <LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Display_Temperature_Humidity
-<LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifiswitch
 <LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;switchmode
 <LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;fail
 <LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Flappy_Bird_Init
@@ -1656,7 +1657,8 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OLED_ShowChar
 </UL>
-<BR>[Called By]<UL><LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setvlight
+<BR>[Called By]<UL><LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifiswitch
+<LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setvlight
 <LI><a href="#[e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setrtc
 <LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setrgb
 <LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setpwm1
@@ -1672,7 +1674,6 @@ Global Symbols
 <LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mode1
 <LI><a href="#[e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;displayrtc
 <LI><a href="#[e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;beforeall
-<LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifiswitch
 <LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;switchmode
 <LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;fail
 <LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Flappy_Bird_Init
@@ -1835,9 +1836,10 @@ Global Symbols
 <P><STRONG><a name="[e7]"></a>entermode</STRONG> (Thumb, 88 bytes, Stack size 8 bytes, maintask.o(i.entermode))
 <BR><BR>[Stack]<UL><LI>Max Depth = 232 + Unknown Stack Size
  + In Cycle
-<LI>Call Chain = entermode &rArr;  mode8_pre (Cycle)
+<LI>Call Chain = entermode &rArr;  wifiswitch (Cycle)
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mode8_pre
+<BR>[Calls]<UL><LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifiswitch
+<LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mode8_pre
 <LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mode7
 <LI><a href="#[ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mode6
 <LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mode5
@@ -1845,7 +1847,6 @@ Global Symbols
 <LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mode3
 <LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mode2
 <LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mode1
-<LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifiswitch
 <LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Flappy_Bird_Init
 </UL>
 <BR>[Called By]<UL><LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;switchmode
@@ -1859,7 +1860,8 @@ Global Symbols
 <LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr
 <LI><a href="#[f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strstr
 </UL>
-<BR>[Called By]<UL><LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setvlight
+<BR>[Called By]<UL><LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifiswitch
+<LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setvlight
 <LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setrgb
 <LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setpwm1
 <LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setperiod
@@ -1872,7 +1874,6 @@ Global Symbols
 <LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mode3
 <LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mode2
 <LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mode1
-<LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifiswitch
 <LI><a href="#[e3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;esp8266_start_trans
 </UL>
 
@@ -1885,13 +1886,12 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;beforeall
 </UL>
 
-<P><STRONG><a name="[7f]"></a>fail</STRONG> (Thumb, 156 bytes, Stack size 80 bytes, flappy_bird.o(i.fail))
+<P><STRONG><a name="[7f]"></a>fail</STRONG> (Thumb, 136 bytes, Stack size 80 bytes, flappy_bird.o(i.fail))
 <BR><BR>[Stack]<UL><LI>Max Depth = 216 + Unknown Stack Size
  + In Cycle
-<LI>Call Chain = fail &rArr;  wifiswitch (Cycle)
+<LI>Call Chain = fail &rArr;  switchmode (Cycle)
 </UL>
-<BR>[Calls]<UL><LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifiswitch
-<LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;switchmode
+<BR>[Calls]<UL><LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;switchmode
 <LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Button_LongPress
 <LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SaveHighScore
 <LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OLED_ShowString
@@ -1906,8 +1906,8 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 256 + Unknown Stack Size
 <LI>Call Chain = init &rArr; wifiswitch &rArr; mode8_pre &rArr; mode8 &rArr;  wifiswitch (Cycle)
 </UL>
-<BR>[Calls]<UL><LI><a href="#[e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;displayrtc
-<LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifiswitch
+<BR>[Calls]<UL><LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifiswitch
+<LI><a href="#[e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;displayrtc
 <LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;switchmode
 <LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Button_LongPress
 <LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr
@@ -1918,7 +1918,7 @@ Global Symbols
 <LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[4b]"></a>main</STRONG> (Thumb, 54 bytes, Stack size 0 bytes, main.o(i.main))
+<P><STRONG><a name="[4b]"></a>main</STRONG> (Thumb, 58 bytes, Stack size 0 bytes, main.o(i.main))
 <BR><BR>[Stack]<UL><LI>Max Depth = 256 + Unknown Stack Size
 <LI>Call Chain = main &rArr; init &rArr; wifiswitch &rArr; mode8_pre &rArr; mode8 &rArr;  wifiswitch (Cycle)
 </UL>
@@ -1933,6 +1933,7 @@ Global Symbols
 <LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_GPIO_Init
 <LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_ADC2_Init
 <LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_ADC1_Init
+<LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_PWR_EnableBkUpAccess
 <LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Init
 <LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemClock_Config
 </UL>
@@ -1956,8 +1957,8 @@ Global Symbols
 <LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr
 <LI><a href="#[f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strstr
 </UL>
-<BR>[Called By]<UL><LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;entermode
-<LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifiswitch
+<BR>[Called By]<UL><LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifiswitch
+<LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;entermode
 </UL>
 
 <P><STRONG><a name="[e9]"></a>mode2</STRONG> (Thumb, 358 bytes, Stack size 8 bytes, maintask.o(i.mode2))
@@ -1965,8 +1966,8 @@ Global Symbols
 <LI>Call Chain = mode2 &rArr;  wifiswitch (Cycle)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
-<LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setperiod
 <LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifiswitch
+<LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setperiod
 <LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;switchmode
 <LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Button_LongPress
 <LI><a href="#[f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;esp8266_send_cmd
@@ -1977,9 +1978,9 @@ Global Symbols
 <LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr
 <LI><a href="#[f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strstr
 </UL>
-<BR>[Called By]<UL><LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setperiod
+<BR>[Called By]<UL><LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifiswitch
+<LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setperiod
 <LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;entermode
-<LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifiswitch
 </UL>
 
 <P><STRONG><a name="[ea]"></a>mode3</STRONG> (Thumb, 302 bytes, Stack size 8 bytes, maintask.o(i.mode3))
@@ -1988,8 +1989,8 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PWM_Stop
 <LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PWM_Start
-<LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setpwm1
 <LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifiswitch
+<LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setpwm1
 <LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;switchmode
 <LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Button_LongPress
 <LI><a href="#[f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;esp8266_send_cmd
@@ -2000,9 +2001,9 @@ Global Symbols
 <LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr
 <LI><a href="#[f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strstr
 </UL>
-<BR>[Called By]<UL><LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setpwm1
+<BR>[Called By]<UL><LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifiswitch
+<LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setpwm1
 <LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;entermode
-<LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifiswitch
 </UL>
 
 <P><STRONG><a name="[eb]"></a>mode4</STRONG> (Thumb, 376 bytes, Stack size 8 bytes, maintask.o(i.mode4))
@@ -2011,8 +2012,8 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PWM_Stop
 <LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PWM_Start
-<LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Button_ShortPress
 <LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifiswitch
+<LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Button_ShortPress
 <LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;switchmode
 <LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Button_LongPress
 <LI><a href="#[f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;esp8266_send_cmd
@@ -2023,8 +2024,8 @@ Global Symbols
 <LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr
 <LI><a href="#[f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strstr
 </UL>
-<BR>[Called By]<UL><LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;entermode
-<LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifiswitch
+<BR>[Called By]<UL><LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifiswitch
+<LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;entermode
 </UL>
 
 <P><STRONG><a name="[ec]"></a>mode5</STRONG> (Thumb, 370 bytes, Stack size 16 bytes, maintask.o(i.mode5))
@@ -2035,8 +2036,8 @@ Global Symbols
 <LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_ADC_PollForConversion
 <LI><a href="#[f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_ADC_GetValue
 <LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_ADCEx_Calibration_Start
-<LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setvlight
 <LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifiswitch
+<LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setvlight
 <LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;switchmode
 <LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Button_LongPress
 <LI><a href="#[f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;esp8266_send_cmd
@@ -2049,18 +2050,18 @@ Global Symbols
 <LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr
 <LI><a href="#[f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strstr
 </UL>
-<BR>[Called By]<UL><LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setvlight
+<BR>[Called By]<UL><LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifiswitch
+<LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setvlight
 <LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;entermode
-<LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifiswitch
 </UL>
 
 <P><STRONG><a name="[ed]"></a>mode6</STRONG> (Thumb, 270 bytes, Stack size 8 bytes, maintask.o(i.mode6))
 <BR><BR>[Stack]<UL><LI>Max Depth = 168 + In Cycle
 <LI>Call Chain = mode6 &rArr;  wifiswitch (Cycle)
 </UL>
-<BR>[Calls]<UL><LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setdht
+<BR>[Calls]<UL><LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifiswitch
+<LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setdht
 <LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Display_Temperature_Humidity
-<LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifiswitch
 <LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;switchmode
 <LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Button_LongPress
 <LI><a href="#[f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;esp8266_send_cmd
@@ -2071,9 +2072,9 @@ Global Symbols
 <LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr
 <LI><a href="#[f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strstr
 </UL>
-<BR>[Called By]<UL><LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setdht
+<BR>[Called By]<UL><LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifiswitch
+<LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setdht
 <LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;entermode
-<LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifiswitch
 </UL>
 
 <P><STRONG><a name="[ee]"></a>mode7</STRONG> (Thumb, 274 bytes, Stack size 16 bytes, maintask.o(i.mode7))
@@ -2096,8 +2097,8 @@ Global Symbols
 <LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr
 <LI><a href="#[f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strstr
 </UL>
-<BR>[Called By]<UL><LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;entermode
-<LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifiswitch
+<BR>[Called By]<UL><LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifiswitch
+<LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;entermode
 </UL>
 
 <P><STRONG><a name="[fc]"></a>mode8</STRONG> (Thumb, 290 bytes, Stack size 8 bytes, maintask.o(i.mode8))
@@ -2106,8 +2107,8 @@ Global Symbols
 <LI>Call Chain = mode8 &rArr;  wifiswitch (Cycle)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PWM_Stop
-<LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setrgb
 <LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifiswitch
+<LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setrgb
 <LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;switchmode
 <LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Button_LongPress
 <LI><a href="#[f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;esp8266_send_cmd
@@ -2129,8 +2130,8 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PWM_Start
 <LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mode8
 </UL>
-<BR>[Called By]<UL><LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;entermode
-<LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifiswitch
+<BR>[Called By]<UL><LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifiswitch
+<LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;entermode
 </UL>
 
 <P><STRONG><a name="[fb]"></a>setdht</STRONG> (Thumb, 348 bytes, Stack size 16 bytes, maintask.o(i.setdht))
@@ -2263,7 +2264,8 @@ Global Symbols
 <LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OLED_Refresh
 <LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OLED_Clear
 </UL>
-<BR>[Called By]<UL><LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mode8
+<BR>[Called By]<UL><LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifiswitch
+<LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mode8
 <LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mode7
 <LI><a href="#[ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mode6
 <LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mode5
@@ -2272,7 +2274,6 @@ Global Symbols
 <LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mode2
 <LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mode1
 <LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;init
-<LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifiswitch
 <LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;fail
 </UL>
 
@@ -2318,7 +2319,6 @@ Global Symbols
 <LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mode1
 <LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;init
 <LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;entermode
-<LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;fail
 </UL>
 <P>
 <H3>

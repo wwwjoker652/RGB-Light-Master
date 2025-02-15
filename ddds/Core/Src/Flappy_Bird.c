@@ -5,6 +5,7 @@
 #include "main.h"
 #include "rtc.h"
 #include "maintask.h"
+#include "my_rtc.h"
 
 #define GRAVITY 1  // 重力
 #define FLAP -3    // 鸟跳跃的上升速度
@@ -23,27 +24,27 @@ int obstacle_x = 128; // 障碍物的初始位置
 int obstacle_gap = 20; // 障碍物上下间距
 int obstacle_height = 30; // 障碍物的高度
 int score = 0;
-int highsc = 0;
+uint32_t highsc = 0;
 int time111 = 50;
 Obstacle obstacles[MAX_OBSTACLES];
 int obstacle_speed = 2; // 障碍物初始移动速度
 static int frame_count = 0;
 
 void SaveHighScore(uint32_t highScore) {
-    // 写入最高分到备份寄存器（假设使用 DR1）
+    // 写入最高分到备份寄存器（假设使用 DR4）
     if (highScore <= 0xFFFF) { // 16 位寄存器限制
-        HAL_RTCEx_BKUPWrite(&hrtc, RTC_BKP_DR2, (uint16_t)highScore);
+        HAL_RTCEx_BKUPWrite(&hrtc, RTC_BKP_DR4, (uint16_t)highScore);
     } else {
         // 如果需要存储大于 16 位的数据，可以分为高低位写入
-        HAL_RTCEx_BKUPWrite(&hrtc, RTC_BKP_DR2, (uint16_t)(highScore & 0xFFFF));       // 低 16 位
-        HAL_RTCEx_BKUPWrite(&hrtc, RTC_BKP_DR3, (uint16_t)((highScore >> 16) & 0xFFFF)); // 高 16 位
+        HAL_RTCEx_BKUPWrite(&hrtc, RTC_BKP_DR4, (uint16_t)(highScore & 0xFFFF));       // 低 16 位
+        HAL_RTCEx_BKUPWrite(&hrtc, RTC_BKP_DR5, (uint16_t)((highScore >> 16) & 0xFFFF)); // 高 16 位
     }
 }
 
 uint32_t ReadHighScore(void) {
     uint32_t highScore = 0;
-    highScore = HAL_RTCEx_BKUPRead(&hrtc, RTC_BKP_DR2); // 读取低 16 位
-    highScore |= ((uint32_t)HAL_RTCEx_BKUPRead(&hrtc, RTC_BKP_DR3) << 16); // 读取高 16 位
+    highScore = HAL_RTCEx_BKUPRead(&hrtc, RTC_BKP_DR4); // 读取低 16 位
+    highScore |= ((uint32_t)HAL_RTCEx_BKUPRead(&hrtc, RTC_BKP_DR5) << 16); // 读取高 16 位
     return highScore;
 }
 
@@ -72,9 +73,6 @@ void fail(void){
 		OLED_Refresh();
 		if (Button_LongPress(GPIOA, GPIO_PIN_15)){
 			break;
-		}
-		if (Button_LongPress(GPIOA, GPIO_PIN_11)){
-			wifiswitch();
 		}
 		if (Button_LongPress(GPIOB, GPIO_PIN_11)) {
 			switchmode();
