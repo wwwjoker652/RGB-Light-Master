@@ -64,17 +64,17 @@
 通过按下按键设置compare值，可以改变亮度。
 #### 6.电压指示灯
 使用分压接法接入一个电位器，并且用单片机自带的ADC读入检测值，经过计算可以得到分得的电压，公式如下:
-$$
-\frac{ADC}{4095}*3.3=Voltage
-$$
+
+![公式](https://latex.codecogs.com/svg.latex?\frac{ADC}{4095}*100=Value)
+
 当Voltage可变时，检测的电压可变。
 #### 7.温度指示灯
 从`DHT11`读取温湿度数据，并与设定值进行比较。
 #### 8.声音指示灯
 从ADC读取麦克风数据，并用此公式转化为100以内的数：
-$$
-\frac{ADC}{4095}*100=Value
-$$
+
+![公式](https://latex.codecogs.com/svg.latex?\frac{ADC}{4095}*100=Value)
+
 转化完成后，将compare值设置为Value即可。
 #### 9.RGB灯
 将三个灯的compare值设置为一个数时，可以任意调整颜色。
