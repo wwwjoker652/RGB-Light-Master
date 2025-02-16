@@ -3,9 +3,9 @@
 <title>Static Call Graph - [ddds\ddds.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image ddds\ddds.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Sat Feb 15 10:45:51 2025
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Sun Feb 16 15:20:14 2025
 <BR><P>
-<H3>Maximum Stack Usage =        256 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
+<H3>Maximum Stack Usage =        264 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
 __rt_entry_main &rArr; main &rArr; init &rArr; wifiswitch &rArr; mode8_pre &rArr; mode8 &rArr;  wifiswitch (Cycle)
 <P>
@@ -242,7 +242,7 @@ Global Symbols
 <P><STRONG><a name="[121]"></a>__rt_entry_postsh_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$00000009))
 
 <P><STRONG><a name="[4a]"></a>__rt_entry_main</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$0000000D))
-<BR><BR>[Stack]<UL><LI>Max Depth = 256 + Unknown Stack Size
+<BR><BR>[Stack]<UL><LI>Max Depth = 264 + Unknown Stack Size
 <LI>Call Chain = __rt_entry_main &rArr; main &rArr; init &rArr; wifiswitch &rArr; mode8_pre &rArr; mode8 &rArr;  wifiswitch (Cycle)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
@@ -1706,7 +1706,7 @@ Global Symbols
 <P><STRONG><a name="[9]"></a>SVC_Handler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f1xx_it.o(i.SVC_Handler))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f103xb.o(RESET)
 </UL>
-<P><STRONG><a name="[df]"></a>SaveHighScore</STRONG> (Thumb, 40 bytes, Stack size 8 bytes, flappy_bird.o(i.SaveHighScore))
+<P><STRONG><a name="[df]"></a>SaveHighScore</STRONG> (Thumb, 28 bytes, Stack size 8 bytes, flappy_bird.o(i.SaveHighScore))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = SaveHighScore
 </UL>
 <BR>[Calls]<UL><LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RTCEx_BKUPWrite
@@ -1918,8 +1918,8 @@ Global Symbols
 <LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[4b]"></a>main</STRONG> (Thumb, 58 bytes, Stack size 0 bytes, main.o(i.main))
-<BR><BR>[Stack]<UL><LI>Max Depth = 256 + Unknown Stack Size
+<P><STRONG><a name="[4b]"></a>main</STRONG> (Thumb, 94 bytes, Stack size 8 bytes, main.o(i.main))
+<BR><BR>[Stack]<UL><LI>Max Depth = 264 + Unknown Stack Size
 <LI>Call Chain = main &rArr; init &rArr; wifiswitch &rArr; mode8_pre &rArr; mode8 &rArr;  wifiswitch (Cycle)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;init

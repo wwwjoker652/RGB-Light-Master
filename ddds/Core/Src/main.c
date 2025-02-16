@@ -87,6 +87,8 @@ int main(void)
   HAL_Init();
 
   /* USER CODE BEGIN Init */
+	__HAL_RCC_PWR_CLK_ENABLE();       // 启用PWR时钟
+  __HAL_RCC_BKP_CLK_ENABLE();       // 启用BKP时钟
 	HAL_PWR_EnableBkUpAccess();
   /* USER CODE END Init */
 

@@ -30,22 +30,17 @@ Obstacle obstacles[MAX_OBSTACLES];
 int obstacle_speed = 2; // 障碍物初始移动速度
 static int frame_count = 0;
 
+// 保存高分（始终写入DR4和DR5）
 void SaveHighScore(uint32_t highScore) {
-    // 写入最高分到备份寄存器（假设使用 DR4）
-    if (highScore <= 0xFFFF) { // 16 位寄存器限制
-        HAL_RTCEx_BKUPWrite(&hrtc, RTC_BKP_DR4, (uint16_t)highScore);
-    } else {
-        // 如果需要存储大于 16 位的数据，可以分为高低位写入
-        HAL_RTCEx_BKUPWrite(&hrtc, RTC_BKP_DR4, (uint16_t)(highScore & 0xFFFF));       // 低 16 位
-        HAL_RTCEx_BKUPWrite(&hrtc, RTC_BKP_DR5, (uint16_t)((highScore >> 16) & 0xFFFF)); // 高 16 位
-    }
+    HAL_RTCEx_BKUPWrite(&hrtc, RTC_BKP_DR4, highScore & 0xFFFF);
+    HAL_RTCEx_BKUPWrite(&hrtc, RTC_BKP_DR5, (highScore >> 16) & 0xFFFF);
 }
 
+// 读取高分
 uint32_t ReadHighScore(void) {
-    uint32_t highScore = 0;
-    highScore = HAL_RTCEx_BKUPRead(&hrtc, RTC_BKP_DR4); // 读取低 16 位
-    highScore |= ((uint32_t)HAL_RTCEx_BKUPRead(&hrtc, RTC_BKP_DR5) << 16); // 读取高 16 位
-    return highScore;
+    uint32_t low = HAL_RTCEx_BKUPRead(&hrtc, RTC_BKP_DR4);
+    uint32_t high = HAL_RTCEx_BKUPRead(&hrtc, RTC_BKP_DR5);
+    return (high << 16) | low;
 }
 
 void InitObstacles(void) {
