@@ -450,6 +450,7 @@ void setperiod(void){
 		}
 		if(receive_flag)
 		{
+			int received_value = 0;
 			receive_flag=0;
 			if(strstr((const char*)my_order,(const char*)"<+>"))
 			{
@@ -492,6 +493,21 @@ void setperiod(void){
 				esp8266_send_cmd("AT+CIPSEND=0,11","OK",50);
 				esp8266_send_cmd("Exiting...\n","OK",50);
 				mode2();
+			}else if(sscanf((const char*)my_order, "<%d>", &received_value) == 1)
+					{
+						if(received_value >= 0 && received_value <= 9999) // 示例范围限制
+						{
+								Uart2_Rx_Cnt = 0;
+								memset(RxBuffer, 0x00, sizeof(RxBuffer));
+								memset(my_order, 0x00, sizeof(my_order));
+								if(status){
+									ptime1 = received_value;
+								}else{
+									ptime2 = received_value;
+								}
+								esp8266_send_cmd("AT+CIPSEND=0,4","OK",50);
+								esp8266_send_cmd("OK!\n","OK",50);
+						}
 			}
 		}
 	}
@@ -580,6 +596,7 @@ void setpwm1(void){
 			}
 			if(receive_flag)
 			{
+				int received_value = 0;
 				receive_flag=0;
 				if(strstr((const char*)my_order,(const char*)"<+>"))
 				{
@@ -598,14 +615,26 @@ void setpwm1(void){
 						esp8266_send_cmd("AT+CIPSEND=0,4","OK",50);
 						esp8266_send_cmd("OK!\n","OK",50);
 					}else if(strstr((const char*)my_order,(const char*)"<exit>"))
-								{
-									Uart2_Rx_Cnt=0;
-									memset(RxBuffer,0x00,sizeof(RxBuffer));
-									memset(RxBuffer,0x00,sizeof(my_order));	
-									esp8266_send_cmd("AT+CIPSEND=0,11","OK",50);
-									esp8266_send_cmd("Exiting...\n","OK",50);
-									mode3();
-								}
+					{
+						Uart2_Rx_Cnt=0;
+						memset(RxBuffer,0x00,sizeof(RxBuffer));
+						memset(RxBuffer,0x00,sizeof(my_order));	
+						esp8266_send_cmd("AT+CIPSEND=0,11","OK",50);
+						esp8266_send_cmd("Exiting...\n","OK",50);
+						mode3();
+					}else if(sscanf((const char*)my_order, "<%d>", &received_value) == 1)
+					{
+						if(received_value >= 0 && received_value <= 9999) // 示例范围限制
+						{
+								Uart2_Rx_Cnt = 0;
+								memset(RxBuffer, 0x00, sizeof(RxBuffer));
+								memset(my_order, 0x00, sizeof(my_order));
+								
+								pwmtime1 = received_value; // 使用接收到的值设置vlight
+								esp8266_send_cmd("AT+CIPSEND=0,4","OK",50);
+								esp8266_send_cmd("OK!\n","OK",50);
+						}
+					}
 			}
 	}
 }
@@ -687,15 +716,21 @@ void mode5(void){
 	OLED_Refresh();
 	HAL_Delay(2000);
 	OLED_Clear();
-	OLED_ShowString(20, 20, "Voltage light!", 12, 1);
+	OLED_ShowString(20, 10, "Voltage light!", 12, 1);
 	OLED_Refresh();
 	HAL_ADCEx_Calibration_Start(&hadc1);
 	while (1){
 		HAL_ADC_Start(&hadc1);
 		HAL_ADC_PollForConversion(&hadc1, HAL_MAX_DELAY);
 		uint32_t adc_value = HAL_ADC_GetValue(&hadc1);
-		OLED_ShowString(20, 40, "ADC Value:", 12, 1);
-		OLED_ShowNum(80, 40, adc_value, 4, 12, 1);
+		OLED_ShowString(20, 30, "ADC Value:", 12, 1);
+		OLED_ShowNum(80, 30, adc_value, 4, 12, 1);
+		OLED_ShowString(20, 50, "Voltage:", 12, 1);
+		float voltagei = ((float)adc_value/4095)*3.3;
+		uint32_t voltagef = (int)(voltagei * 1000) % 1000;
+		OLED_ShowNum(75, 50, voltagei, 1, 12, 1);
+		OLED_ShowString(80, 50, ".", 12, 1);
+		OLED_ShowNum(86, 50, voltagef, 3, 12, 1);
 		OLED_Refresh();
 		if (adc_value > vlight) {
 				__HAL_TIM_SET_COMPARE(&htim3,TIM_CHANNEL_3,100);
@@ -741,11 +776,11 @@ void mode5(void){
 }
 
 void setvlight(void){
+	OLED_Clear();
 	while(1){
-		OLED_Clear();
-		OLED_ShowString(20, 20, "Setting the", 12, 1);
-		OLED_ShowString(20, 30, "Voltage light...", 12, 1);
-		OLED_ShowString(20, 40, "Current:", 12, 1);
+		OLED_ShowString(20, 10, "Setting the", 12, 1);
+		OLED_ShowString(20, 20, "Voltage light...", 12, 1);
+		OLED_ShowString(20, 30, "Current:", 12, 1);
 		uint8_t num_digits = 0;
 		uint32_t temp = vlight;
 		while (temp > 0) {
@@ -753,7 +788,13 @@ void setvlight(void){
 				num_digits++;
 		}
 		if (num_digits == 0) num_digits = 1;
-		OLED_ShowNum(70, 40, vlight, num_digits, 12, 1);
+		OLED_ShowNum(70, 30, vlight, 4, 12, 1);
+		OLED_ShowString(20, 40, "Voltage:", 12, 1);
+		float voltagei = ((float)vlight/4095)*3.3;
+		uint32_t voltagef = (int)(voltagei * 1000) % 1000;
+		OLED_ShowNum(75, 40, voltagei, 1, 12, 1);
+		OLED_ShowString(80, 40, ".", 12, 1);
+		OLED_ShowNum(86, 40, voltagef, 3, 12, 1);
 		OLED_Refresh();
 		HAL_Delay(500);
 		if (Button_ShortPress(GPIOB, GPIO_PIN_14)) {
@@ -767,6 +808,7 @@ void setvlight(void){
 		}
 			if(receive_flag)
 			{
+				int received_value = 0;
 				receive_flag=0;
 				if(strstr((const char*)my_order,(const char*)"<+>"))
 				{
@@ -792,8 +834,20 @@ void setvlight(void){
 						esp8266_send_cmd("AT+CIPSEND=0,11","OK",50);
 						esp8266_send_cmd("Exiting...\n","OK",50);						
 						mode5();
-					}
+					}else if(sscanf((const char*)my_order, "<%d>", &received_value) == 1)
+					{
+						if(received_value >= 0 && received_value <= 4095) // 示例范围限制
+						{
+								Uart2_Rx_Cnt = 0;
+								memset(RxBuffer, 0x00, sizeof(RxBuffer));
+								memset(my_order, 0x00, sizeof(my_order));
+								
+								vlight = received_value; // 使用接收到的值设置vlight
+								esp8266_send_cmd("AT+CIPSEND=0,4","OK",50);
+								esp8266_send_cmd("OK!\n","OK",50);
+						}
 			}
+		}
 	}
 }
 
@@ -889,6 +943,7 @@ void setdht(void){
 		}
 			if(receive_flag)
 			{
+				int received_value = 0;
 				receive_flag=0;
 				if(strstr((const char*)my_order,(const char*)"<+>"))
 				{
@@ -914,6 +969,17 @@ void setdht(void){
 						esp8266_send_cmd("AT+CIPSEND=0,11","OK",50);
 						esp8266_send_cmd("Exiting...\n","OK",50);						
 						mode6();
+					}else if(sscanf((const char*)my_order, "<%d>", &received_value) == 1)
+					{
+						if(received_value >= 0 && received_value <= 99) // 示例范围限制
+						{
+								Uart2_Rx_Cnt = 0;
+								memset(RxBuffer, 0x00, sizeof(RxBuffer));
+								memset(my_order, 0x00, sizeof(my_order));
+								tempr = received_value; // 使用接收到的值设置vlight
+								esp8266_send_cmd("AT+CIPSEND=0,4","OK",50);
+								esp8266_send_cmd("OK!\n","OK",50);
+						}
 					}
 			}
 	}
@@ -1256,6 +1322,7 @@ void setrgb(void){
 		}
 		if(receive_flag)
 		{
+			int received_value = 0;
 			receive_flag=0;
 			if(strstr((const char*)my_order,(const char*)"<+>"))
 			{
@@ -1323,6 +1390,35 @@ void setrgb(void){
 				esp8266_send_cmd("AT+CIPSEND=0,11","OK",50);
 				esp8266_send_cmd("Exiting...\n","OK",50);
 				mode8();
+			}else if(sscanf((const char*)my_order, "<%d>", &received_value) == 1)
+					{
+						if(received_value >= 0 && received_value <= 100) // 示例范围限制
+						{
+								Uart2_Rx_Cnt = 0;
+								memset(RxBuffer, 0x00, sizeof(RxBuffer));
+								memset(my_order, 0x00, sizeof(my_order));
+								if (stat == 1){ 
+									R = received_value;
+									if(R >= 10000){
+										R = 0;
+									}
+									HAL_Delay(500);
+								}else if(stat == 2){
+									G = received_value;
+									if(G >= 10000){
+										G = 0;
+									}
+									HAL_Delay(500);
+								}else if(stat == 3){
+									B = received_value;
+									if(B >= 10000){
+										B = 0;
+									}
+									HAL_Delay(500);
+								}
+								esp8266_send_cmd("AT+CIPSEND=0,4","OK",50);
+								esp8266_send_cmd("OK!\n","OK",50);
+						}
 			}
 		}
 	}
