@@ -26,8 +26,10 @@ uint8_t Uart2_Rx_Cnt = 0;
 char my_order[15]={0};
 char receive_flag=0;
 char weeks[7][10] = {"Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"};
-uint8_t modes[10] = {0,1,1,1,1,1,1,1,1,1};
+uint8_t modes[11] = {0,1,1,1,1,1,1,1,1,1,1};
 struct tm setting;
+uint8_t is_running = 0;
+uint32_t ms_counter = 0;
 
 void beforeall(void){
 	OLED_Init();
@@ -106,10 +108,11 @@ void switchmode(void){
 			OLED_ShowString(0, 20, "Mode8", 16, modes[7]);
 			OLED_ShowString(0, 40, "Wifi", 16, modes[8]);
 			OLED_ShowString(80, 0, "Game", 16, modes[9]);
+			OLED_ShowString(80, 20, "Timer", 16, modes[10]);
 			OLED_Refresh();
 			if (Button_ShortPress(GPIOA, GPIO_PIN_11)){
-				if(choice == 10){
-				choice = 9;
+				if(choice == 11){
+				choice = 10;
 				}
 				modes[choice - 1] = 1;
 				choice++;
@@ -155,6 +158,8 @@ void entermode(uint8_t x){
 		wifiswitch();
 	}else if(x == 10){
 		Flappy_Bird_Init();
+	}else if(x == 11){
+		timer();
 	}
 }
 
@@ -1520,4 +1525,63 @@ void displayrtc(void){
 		setrtc();
 	}
 	HAL_Delay(500);
+}
+
+void UpdateTime(TimeStruct *time) {
+  uint32_t total_ms = ms_counter;
+  
+  time->hours = total_ms / 360000;
+  total_ms %= 360000;
+  
+  time->minutes = total_ms / 6000;
+  total_ms %= 6000;
+  
+  time->seconds = total_ms / 100;
+  time->milliseconds = total_ms % 100;
+}
+
+void DisplayTime(TimeStruct *t) {
+  char buffer[16];
+  
+  sprintf(buffer, "%02d:%02d:%02d", 
+         t->minutes, 
+         t->seconds, 
+         t->milliseconds);
+	OLED_ShowString(16, 20, (uint8_t *)buffer, 24, 1);
+	OLED_Refresh();
+}
+
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
+	if(is_running){
+		if (htim->Instance == TIM2) {
+			ms_counter += 1;
+		}
+	}
+}
+
+void timer(void){
+	TimeStruct current_time = {0};
+	OLED_Clear();
+	UpdateTime(&current_time);
+	DisplayTime(&current_time);
+	while(HAL_GPIO_ReadPin(GPIOA,GPIO_PIN_15) == GPIO_PIN_RESET){
+		HAL_Delay(10);
+	}
+	while(1){
+		if (Button_ShortPress(GPIOA, GPIO_PIN_15)) {
+			is_running = !is_running;
+		}
+		if(is_running){
+			UpdateTime(&current_time);
+			DisplayTime(&current_time);
+		}
+		if (Button_ShortPress(GPIOB, GPIO_PIN_13)) {
+			ms_counter = 0;
+			UpdateTime(&current_time);
+			DisplayTime(&current_time);
+		}
+		if (Button_LongPress(GPIOB, GPIO_PIN_11)) {
+			switchmode();
+		}
+	}
 }

@@ -110,6 +110,7 @@ int main(void)
   MX_TIM4_Init();
   MX_RTC_Init();
   /* USER CODE BEGIN 2 */
+	HAL_TIM_Base_Start_IT(&htim2);
 	beforeall();
   /* USER CODE END 2 */
 

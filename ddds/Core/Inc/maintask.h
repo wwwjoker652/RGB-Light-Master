@@ -16,6 +16,12 @@
 #include "usart.h"
 #include "gpio.h"
 #define LONG_PRESS_TIME 2000
+typedef struct {
+  uint8_t hours;
+  uint8_t minutes;
+  uint8_t seconds;
+  uint16_t milliseconds;
+} TimeStruct;
 
 void beforeall(void);
 void mode1(void);
@@ -41,5 +47,7 @@ void entermode(uint8_t x);
 uint8_t Button_LongPress(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin);
 uint8_t Button_ShortPress(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin);
 void displayrtc(void);
+void timer(void);
+void UpdateTime(TimeStruct *time);
 
 #endif
