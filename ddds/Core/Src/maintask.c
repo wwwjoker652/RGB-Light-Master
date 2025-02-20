@@ -1569,6 +1569,9 @@ void timer(void){
 	while(1){
 		if (Button_ShortPress(GPIOA, GPIO_PIN_15)) {
 			is_running = !is_running;
+			while(HAL_GPIO_ReadPin(GPIOA,GPIO_PIN_15) == GPIO_PIN_RESET){
+			HAL_Delay(10);
+			}
 		}
 		if(is_running){
 			UpdateTime(&current_time);

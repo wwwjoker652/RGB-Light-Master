@@ -2444,40 +2444,40 @@ Image Symbol Table
     i.setvlight                              0x08006a68   Section        0  maintask.o(i.setvlight)
     i.switchmode                             0x08006d04   Section        0  maintask.o(i.switchmode)
     i.timer                                  0x08006f38   Section        0  maintask.o(i.timer)
-    i.u2_printf                              0x08006fdc   Section        0  esp.o(i.u2_printf)
-    i.wifiswitch                             0x0800702c   Section        0  maintask.o(i.wifiswitch)
-    locale$$code                             0x08007310   Section       44  lc_ctype_c.o(locale$$code)
-    x$fpl$d2f                                0x0800733c   Section       98  d2f.o(x$fpl$d2f)
-    x$fpl$dmul                               0x080073a0   Section      340  dmul.o(x$fpl$dmul)
-    x$fpl$dnaninf                            0x080074f4   Section      156  dnaninf.o(x$fpl$dnaninf)
-    x$fpl$dretinf                            0x08007590   Section       12  dretinf.o(x$fpl$dretinf)
-    x$fpl$f2d                                0x0800759c   Section       86  f2d.o(x$fpl$f2d)
-    x$fpl$fdiv                               0x080075f4   Section      388  fdiv.o(x$fpl$fdiv)
-    _fdiv1                                   0x080075f5   Thumb Code     0  fdiv.o(x$fpl$fdiv)
-    x$fpl$ffix                               0x08007778   Section       54  ffix.o(x$fpl$ffix)
-    x$fpl$ffixu                              0x080077b0   Section       62  ffixu.o(x$fpl$ffixu)
-    x$fpl$ffltu                              0x080077f0   Section       38  fflt_clz.o(x$fpl$ffltu)
-    x$fpl$fmul                               0x08007818   Section      258  fmul.o(x$fpl$fmul)
-    x$fpl$fnaninf                            0x0800791a   Section      140  fnaninf.o(x$fpl$fnaninf)
-    x$fpl$fretinf                            0x080079a6   Section       10  fretinf.o(x$fpl$fretinf)
-    .constdata                               0x080079b0   Section     7696  oled.o(.constdata)
-    x$fpl$usenofp                            0x080079b0   Section        0  usenofp.o(x$fpl$usenofp)
-    .constdata                               0x080097c0   Section       44  my_rtc.o(.constdata)
-    .constdata                               0x080097ec   Section       18  stm32f1xx_hal_rcc.o(.constdata)
-    aPredivFactorTable                       0x080097ec   Data           2  stm32f1xx_hal_rcc.o(.constdata)
-    aPLLMULFactorTable                       0x080097ee   Data          16  stm32f1xx_hal_rcc.o(.constdata)
-    .constdata                               0x080097fe   Section       18  stm32f1xx_hal_rcc_ex.o(.constdata)
-    aPredivFactorTable                       0x080097fe   Data           2  stm32f1xx_hal_rcc_ex.o(.constdata)
-    aPLLMULFactorTable                       0x08009800   Data          16  stm32f1xx_hal_rcc_ex.o(.constdata)
-    .constdata                               0x08009810   Section       16  system_stm32f1xx.o(.constdata)
-    .constdata                               0x08009820   Section        8  system_stm32f1xx.o(.constdata)
-    .constdata                               0x08009828   Section       17  __printf_flags_wp.o(.constdata)
-    maptable                                 0x08009828   Data          17  __printf_flags_wp.o(.constdata)
-    .constdata                               0x08009839   Section       12  _monlen.o(.constdata)
-    locale$$data                             0x08009868   Section      272  lc_ctype_c.o(locale$$data)
-    __lcctype_c_name                         0x0800986c   Data           2  lc_ctype_c.o(locale$$data)
-    __lcctype_c_start                        0x08009874   Data           0  lc_ctype_c.o(locale$$data)
-    __lcctype_c_end                          0x08009978   Data           0  lc_ctype_c.o(locale$$data)
+    i.u2_printf                              0x08006ff0   Section        0  esp.o(i.u2_printf)
+    i.wifiswitch                             0x08007040   Section        0  maintask.o(i.wifiswitch)
+    locale$$code                             0x08007324   Section       44  lc_ctype_c.o(locale$$code)
+    x$fpl$d2f                                0x08007350   Section       98  d2f.o(x$fpl$d2f)
+    x$fpl$dmul                               0x080073b4   Section      340  dmul.o(x$fpl$dmul)
+    x$fpl$dnaninf                            0x08007508   Section      156  dnaninf.o(x$fpl$dnaninf)
+    x$fpl$dretinf                            0x080075a4   Section       12  dretinf.o(x$fpl$dretinf)
+    x$fpl$f2d                                0x080075b0   Section       86  f2d.o(x$fpl$f2d)
+    x$fpl$fdiv                               0x08007608   Section      388  fdiv.o(x$fpl$fdiv)
+    _fdiv1                                   0x08007609   Thumb Code     0  fdiv.o(x$fpl$fdiv)
+    x$fpl$ffix                               0x0800778c   Section       54  ffix.o(x$fpl$ffix)
+    x$fpl$ffixu                              0x080077c4   Section       62  ffixu.o(x$fpl$ffixu)
+    x$fpl$ffltu                              0x08007804   Section       38  fflt_clz.o(x$fpl$ffltu)
+    x$fpl$fmul                               0x0800782c   Section      258  fmul.o(x$fpl$fmul)
+    x$fpl$fnaninf                            0x0800792e   Section      140  fnaninf.o(x$fpl$fnaninf)
+    x$fpl$fretinf                            0x080079ba   Section       10  fretinf.o(x$fpl$fretinf)
+    .constdata                               0x080079c4   Section     7696  oled.o(.constdata)
+    x$fpl$usenofp                            0x080079c4   Section        0  usenofp.o(x$fpl$usenofp)
+    .constdata                               0x080097d4   Section       44  my_rtc.o(.constdata)
+    .constdata                               0x08009800   Section       18  stm32f1xx_hal_rcc.o(.constdata)
+    aPredivFactorTable                       0x08009800   Data           2  stm32f1xx_hal_rcc.o(.constdata)
+    aPLLMULFactorTable                       0x08009802   Data          16  stm32f1xx_hal_rcc.o(.constdata)
+    .constdata                               0x08009812   Section       18  stm32f1xx_hal_rcc_ex.o(.constdata)
+    aPredivFactorTable                       0x08009812   Data           2  stm32f1xx_hal_rcc_ex.o(.constdata)
+    aPLLMULFactorTable                       0x08009814   Data          16  stm32f1xx_hal_rcc_ex.o(.constdata)
+    .constdata                               0x08009824   Section       16  system_stm32f1xx.o(.constdata)
+    .constdata                               0x08009834   Section        8  system_stm32f1xx.o(.constdata)
+    .constdata                               0x0800983c   Section       17  __printf_flags_wp.o(.constdata)
+    maptable                                 0x0800983c   Data          17  __printf_flags_wp.o(.constdata)
+    .constdata                               0x0800984d   Section       12  _monlen.o(.constdata)
+    locale$$data                             0x0800987c   Section      272  lc_ctype_c.o(locale$$data)
+    __lcctype_c_name                         0x08009880   Data           2  lc_ctype_c.o(locale$$data)
+    __lcctype_c_start                        0x08009888   Data           0  lc_ctype_c.o(locale$$data)
+    __lcctype_c_end                          0x0800998c   Data           0  lc_ctype_c.o(locale$$data)
     .data                                    0x20000000   Section        5  dht11.o(.data)
     .data                                    0x20000005   Section     1024  esp.o(.data)
     .data                                    0x20000405   Section     1024  esp.o(.data)
@@ -2874,45 +2874,45 @@ Image Symbol Table
     setrtc                                   0x08006865   Thumb Code   470  maintask.o(i.setrtc)
     setvlight                                0x08006a69   Thumb Code   502  maintask.o(i.setvlight)
     switchmode                               0x08006d05   Thumb Code   458  maintask.o(i.switchmode)
-    timer                                    0x08006f39   Thumb Code   150  maintask.o(i.timer)
-    u2_printf                                0x08006fdd   Thumb Code    74  esp.o(i.u2_printf)
-    wifiswitch                               0x0800702d   Thumb Code   610  maintask.o(i.wifiswitch)
-    _get_lc_ctype                            0x08007311   Thumb Code    44  lc_ctype_c.o(locale$$code)
-    __aeabi_d2f                              0x0800733d   Thumb Code     0  d2f.o(x$fpl$d2f)
-    _d2f                                     0x0800733d   Thumb Code    98  d2f.o(x$fpl$d2f)
-    __aeabi_dmul                             0x080073a1   Thumb Code     0  dmul.o(x$fpl$dmul)
-    _dmul                                    0x080073a1   Thumb Code   332  dmul.o(x$fpl$dmul)
-    __fpl_dnaninf                            0x080074f5   Thumb Code   156  dnaninf.o(x$fpl$dnaninf)
-    __fpl_dretinf                            0x08007591   Thumb Code    12  dretinf.o(x$fpl$dretinf)
-    __aeabi_f2d                              0x0800759d   Thumb Code     0  f2d.o(x$fpl$f2d)
-    _f2d                                     0x0800759d   Thumb Code    86  f2d.o(x$fpl$f2d)
-    __aeabi_fdiv                             0x080075f5   Thumb Code     0  fdiv.o(x$fpl$fdiv)
-    _fdiv                                    0x080075f5   Thumb Code   384  fdiv.o(x$fpl$fdiv)
-    __aeabi_f2iz                             0x08007779   Thumb Code     0  ffix.o(x$fpl$ffix)
-    _ffix                                    0x08007779   Thumb Code    54  ffix.o(x$fpl$ffix)
-    __aeabi_f2uiz                            0x080077b1   Thumb Code     0  ffixu.o(x$fpl$ffixu)
-    _ffixu                                   0x080077b1   Thumb Code    62  ffixu.o(x$fpl$ffixu)
-    __aeabi_ui2f                             0x080077f1   Thumb Code     0  fflt_clz.o(x$fpl$ffltu)
-    _ffltu                                   0x080077f1   Thumb Code    38  fflt_clz.o(x$fpl$ffltu)
-    __aeabi_fmul                             0x08007819   Thumb Code     0  fmul.o(x$fpl$fmul)
-    _fmul                                    0x08007819   Thumb Code   258  fmul.o(x$fpl$fmul)
-    __fpl_fnaninf                            0x0800791b   Thumb Code   140  fnaninf.o(x$fpl$fnaninf)
-    __fpl_fretinf                            0x080079a7   Thumb Code    10  fretinf.o(x$fpl$fretinf)
-    __I$use$fp                               0x080079b0   Number         0  usenofp.o(x$fpl$usenofp)
-    asc2_0806                                0x080079b0   Data         552  oled.o(.constdata)
-    asc2_1206                                0x08007bd8   Data        1140  oled.o(.constdata)
-    asc2_1608                                0x0800804c   Data        1520  oled.o(.constdata)
-    asc2_2412                                0x0800863c   Data        3420  oled.o(.constdata)
-    Hzk1                                     0x08009398   Data         352  oled.o(.constdata)
-    Hzk2                                     0x080094f8   Data          72  oled.o(.constdata)
-    Hzk3                                     0x08009540   Data         128  oled.o(.constdata)
-    Hzk4                                     0x080095c0   Data         512  oled.o(.constdata)
-    AHBPrescTable                            0x08009810   Data          16  system_stm32f1xx.o(.constdata)
-    APBPrescTable                            0x08009820   Data           8  system_stm32f1xx.o(.constdata)
-    _monlen                                  0x08009839   Data          12  _monlen.o(.constdata)
-    Region$$Table$$Base                      0x08009848   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x08009868   Number         0  anon$$obj.o(Region$$Table)
-    __ctype                                  0x08009875   Data           0  lc_ctype_c.o(locale$$data)
+    timer                                    0x08006f39   Thumb Code   170  maintask.o(i.timer)
+    u2_printf                                0x08006ff1   Thumb Code    74  esp.o(i.u2_printf)
+    wifiswitch                               0x08007041   Thumb Code   610  maintask.o(i.wifiswitch)
+    _get_lc_ctype                            0x08007325   Thumb Code    44  lc_ctype_c.o(locale$$code)
+    __aeabi_d2f                              0x08007351   Thumb Code     0  d2f.o(x$fpl$d2f)
+    _d2f                                     0x08007351   Thumb Code    98  d2f.o(x$fpl$d2f)
+    __aeabi_dmul                             0x080073b5   Thumb Code     0  dmul.o(x$fpl$dmul)
+    _dmul                                    0x080073b5   Thumb Code   332  dmul.o(x$fpl$dmul)
+    __fpl_dnaninf                            0x08007509   Thumb Code   156  dnaninf.o(x$fpl$dnaninf)
+    __fpl_dretinf                            0x080075a5   Thumb Code    12  dretinf.o(x$fpl$dretinf)
+    __aeabi_f2d                              0x080075b1   Thumb Code     0  f2d.o(x$fpl$f2d)
+    _f2d                                     0x080075b1   Thumb Code    86  f2d.o(x$fpl$f2d)
+    __aeabi_fdiv                             0x08007609   Thumb Code     0  fdiv.o(x$fpl$fdiv)
+    _fdiv                                    0x08007609   Thumb Code   384  fdiv.o(x$fpl$fdiv)
+    __aeabi_f2iz                             0x0800778d   Thumb Code     0  ffix.o(x$fpl$ffix)
+    _ffix                                    0x0800778d   Thumb Code    54  ffix.o(x$fpl$ffix)
+    __aeabi_f2uiz                            0x080077c5   Thumb Code     0  ffixu.o(x$fpl$ffixu)
+    _ffixu                                   0x080077c5   Thumb Code    62  ffixu.o(x$fpl$ffixu)
+    __aeabi_ui2f                             0x08007805   Thumb Code     0  fflt_clz.o(x$fpl$ffltu)
+    _ffltu                                   0x08007805   Thumb Code    38  fflt_clz.o(x$fpl$ffltu)
+    __aeabi_fmul                             0x0800782d   Thumb Code     0  fmul.o(x$fpl$fmul)
+    _fmul                                    0x0800782d   Thumb Code   258  fmul.o(x$fpl$fmul)
+    __fpl_fnaninf                            0x0800792f   Thumb Code   140  fnaninf.o(x$fpl$fnaninf)
+    __fpl_fretinf                            0x080079bb   Thumb Code    10  fretinf.o(x$fpl$fretinf)
+    __I$use$fp                               0x080079c4   Number         0  usenofp.o(x$fpl$usenofp)
+    asc2_0806                                0x080079c4   Data         552  oled.o(.constdata)
+    asc2_1206                                0x08007bec   Data        1140  oled.o(.constdata)
+    asc2_1608                                0x08008060   Data        1520  oled.o(.constdata)
+    asc2_2412                                0x08008650   Data        3420  oled.o(.constdata)
+    Hzk1                                     0x080093ac   Data         352  oled.o(.constdata)
+    Hzk2                                     0x0800950c   Data          72  oled.o(.constdata)
+    Hzk3                                     0x08009554   Data         128  oled.o(.constdata)
+    Hzk4                                     0x080095d4   Data         512  oled.o(.constdata)
+    AHBPrescTable                            0x08009824   Data          16  system_stm32f1xx.o(.constdata)
+    APBPrescTable                            0x08009834   Data           8  system_stm32f1xx.o(.constdata)
+    _monlen                                  0x0800984d   Data          12  _monlen.o(.constdata)
+    Region$$Table$$Base                      0x0800985c   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x0800987c   Number         0  anon$$obj.o(Region$$Table)
+    __ctype                                  0x08009889   Data           0  lc_ctype_c.o(locale$$data)
     Data                                     0x20000000   Data           5  dht11.o(.data)
     BMP9                                     0x20000005   Data        1024  esp.o(.data)
     BMP11                                    0x20000405   Data        1024  esp.o(.data)
@@ -2984,9 +2984,9 @@ Memory Map of the image
 
   Image Entry point : 0x080000ed
 
-  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x0000ce6c, Max: 0x00010000, ABSOLUTE, COMPRESSED[0x00009da8])
+  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x0000ce80, Max: 0x00010000, ABSOLUTE, COMPRESSED[0x00009dbc])
 
-    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x00009978, Max: 0x00010000, ABSOLUTE)
+    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x0000998c, Max: 0x00010000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -3275,42 +3275,42 @@ Memory Map of the image
     0x08006864   0x08006864   0x00000204   Code   RO          564    i.setrtc            maintask.o
     0x08006a68   0x08006a68   0x0000029c   Code   RO          565    i.setvlight         maintask.o
     0x08006d04   0x08006d04   0x00000234   Code   RO          566    i.switchmode        maintask.o
-    0x08006f38   0x08006f38   0x000000a4   Code   RO          567    i.timer             maintask.o
-    0x08006fdc   0x08006fdc   0x00000050   Code   RO          346    i.u2_printf         esp.o
-    0x0800702c   0x0800702c   0x000002e4   Code   RO          568    i.wifiswitch        maintask.o
-    0x08007310   0x08007310   0x0000002c   Code   RO         4785    locale$$code        c_w.l(lc_ctype_c.o)
-    0x0800733c   0x0800733c   0x00000062   Code   RO         4632    x$fpl$d2f           fz_ws.l(d2f.o)
-    0x0800739e   0x0800739e   0x00000002   PAD
-    0x080073a0   0x080073a0   0x00000154   Code   RO         4634    x$fpl$dmul          fz_ws.l(dmul.o)
-    0x080074f4   0x080074f4   0x0000009c   Code   RO         4720    x$fpl$dnaninf       fz_ws.l(dnaninf.o)
-    0x08007590   0x08007590   0x0000000c   Code   RO         4722    x$fpl$dretinf       fz_ws.l(dretinf.o)
-    0x0800759c   0x0800759c   0x00000056   Code   RO         4636    x$fpl$f2d           fz_ws.l(f2d.o)
-    0x080075f2   0x080075f2   0x00000002   PAD
-    0x080075f4   0x080075f4   0x00000184   Code   RO         4639    x$fpl$fdiv          fz_ws.l(fdiv.o)
-    0x08007778   0x08007778   0x00000036   Code   RO         4642    x$fpl$ffix          fz_ws.l(ffix.o)
-    0x080077ae   0x080077ae   0x00000002   PAD
-    0x080077b0   0x080077b0   0x0000003e   Code   RO         4646    x$fpl$ffixu         fz_ws.l(ffixu.o)
-    0x080077ee   0x080077ee   0x00000002   PAD
-    0x080077f0   0x080077f0   0x00000026   Code   RO         4650    x$fpl$ffltu         fz_ws.l(fflt_clz.o)
-    0x08007816   0x08007816   0x00000002   PAD
-    0x08007818   0x08007818   0x00000102   Code   RO         4656    x$fpl$fmul          fz_ws.l(fmul.o)
-    0x0800791a   0x0800791a   0x0000008c   Code   RO         4724    x$fpl$fnaninf       fz_ws.l(fnaninf.o)
-    0x080079a6   0x080079a6   0x0000000a   Code   RO         4726    x$fpl$fretinf       fz_ws.l(fretinf.o)
-    0x080079b0   0x080079b0   0x00000000   Code   RO         4728    x$fpl$usenofp       fz_ws.l(usenofp.o)
-    0x080079b0   0x080079b0   0x00001e10   Data   RO           37    .constdata          oled.o
-    0x080097c0   0x080097c0   0x0000002c   Data   RO          755    .constdata          my_rtc.o
-    0x080097ec   0x080097ec   0x00000012   Data   RO         1699    .constdata          stm32f1xx_hal_rcc.o
-    0x080097fe   0x080097fe   0x00000012   Data   RO         1791    .constdata          stm32f1xx_hal_rcc_ex.o
-    0x08009810   0x08009810   0x00000010   Data   RO         4535    .constdata          system_stm32f1xx.o
-    0x08009820   0x08009820   0x00000008   Data   RO         4536    .constdata          system_stm32f1xx.o
-    0x08009828   0x08009828   0x00000011   Data   RO         4595    .constdata          c_w.l(__printf_flags_wp.o)
-    0x08009839   0x08009839   0x0000000c   Data   RO         4672    .constdata          c_w.l(_monlen.o)
-    0x08009845   0x08009845   0x00000003   PAD
-    0x08009848   0x08009848   0x00000020   Data   RO         4856    Region$$Table       anon$$obj.o
-    0x08009868   0x08009868   0x00000110   Data   RO         4784    locale$$data        c_w.l(lc_ctype_c.o)
+    0x08006f38   0x08006f38   0x000000b8   Code   RO          567    i.timer             maintask.o
+    0x08006ff0   0x08006ff0   0x00000050   Code   RO          346    i.u2_printf         esp.o
+    0x08007040   0x08007040   0x000002e4   Code   RO          568    i.wifiswitch        maintask.o
+    0x08007324   0x08007324   0x0000002c   Code   RO         4785    locale$$code        c_w.l(lc_ctype_c.o)
+    0x08007350   0x08007350   0x00000062   Code   RO         4632    x$fpl$d2f           fz_ws.l(d2f.o)
+    0x080073b2   0x080073b2   0x00000002   PAD
+    0x080073b4   0x080073b4   0x00000154   Code   RO         4634    x$fpl$dmul          fz_ws.l(dmul.o)
+    0x08007508   0x08007508   0x0000009c   Code   RO         4720    x$fpl$dnaninf       fz_ws.l(dnaninf.o)
+    0x080075a4   0x080075a4   0x0000000c   Code   RO         4722    x$fpl$dretinf       fz_ws.l(dretinf.o)
+    0x080075b0   0x080075b0   0x00000056   Code   RO         4636    x$fpl$f2d           fz_ws.l(f2d.o)
+    0x08007606   0x08007606   0x00000002   PAD
+    0x08007608   0x08007608   0x00000184   Code   RO         4639    x$fpl$fdiv          fz_ws.l(fdiv.o)
+    0x0800778c   0x0800778c   0x00000036   Code   RO         4642    x$fpl$ffix          fz_ws.l(ffix.o)
+    0x080077c2   0x080077c2   0x00000002   PAD
+    0x080077c4   0x080077c4   0x0000003e   Code   RO         4646    x$fpl$ffixu         fz_ws.l(ffixu.o)
+    0x08007802   0x08007802   0x00000002   PAD
+    0x08007804   0x08007804   0x00000026   Code   RO         4650    x$fpl$ffltu         fz_ws.l(fflt_clz.o)
+    0x0800782a   0x0800782a   0x00000002   PAD
+    0x0800782c   0x0800782c   0x00000102   Code   RO         4656    x$fpl$fmul          fz_ws.l(fmul.o)
+    0x0800792e   0x0800792e   0x0000008c   Code   RO         4724    x$fpl$fnaninf       fz_ws.l(fnaninf.o)
+    0x080079ba   0x080079ba   0x0000000a   Code   RO         4726    x$fpl$fretinf       fz_ws.l(fretinf.o)
+    0x080079c4   0x080079c4   0x00000000   Code   RO         4728    x$fpl$usenofp       fz_ws.l(usenofp.o)
+    0x080079c4   0x080079c4   0x00001e10   Data   RO           37    .constdata          oled.o
+    0x080097d4   0x080097d4   0x0000002c   Data   RO          755    .constdata          my_rtc.o
+    0x08009800   0x08009800   0x00000012   Data   RO         1699    .constdata          stm32f1xx_hal_rcc.o
+    0x08009812   0x08009812   0x00000012   Data   RO         1791    .constdata          stm32f1xx_hal_rcc_ex.o
+    0x08009824   0x08009824   0x00000010   Data   RO         4535    .constdata          system_stm32f1xx.o
+    0x08009834   0x08009834   0x00000008   Data   RO         4536    .constdata          system_stm32f1xx.o
+    0x0800983c   0x0800983c   0x00000011   Data   RO         4595    .constdata          c_w.l(__printf_flags_wp.o)
+    0x0800984d   0x0800984d   0x0000000c   Data   RO         4672    .constdata          c_w.l(_monlen.o)
+    0x08009859   0x08009859   0x00000003   PAD
+    0x0800985c   0x0800985c   0x00000020   Data   RO         4856    Region$$Table       anon$$obj.o
+    0x0800987c   0x0800987c   0x00000110   Data   RO         4784    locale$$data        c_w.l(lc_ctype_c.o)
 
 
-    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x08009978, Size: 0x00004430, Max: 0x00005000, ABSOLUTE, COMPRESSED[0x00000430])
+    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x0800998c, Size: 0x00004430, Max: 0x00005000, ABSOLUTE, COMPRESSED[0x00000430])
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -3365,7 +3365,7 @@ Image component sizes
        164         12          0          0          0        895   gpio.o
        156         26          0          0         84       1473   i2c.o
        250         10          0          0          0       2140   main.o
-     10906       2288          0        137        316      21792   maintask.o
+     10926       2288          0        137        316      21804   maintask.o
        256         20         44          0          0       2884   my_rtc.o
       1738         58       7696          0       1152     474796   oled.o
         80         20          0          0         20       1283   rtc.o
@@ -3392,7 +3392,7 @@ Image component sizes
        184         20          0          0         72       1526   usart.o
 
     ----------------------------------------------------------------------
-     25374       3278       8068      13556       3528     625682   Object Totals
+     25394       3278       8068      13556       3528     625694   Object Totals
          0          0         32          0          0          0   (incl. Generated)
         28          0          0          6          0          0   (incl. Padding)
 
@@ -3487,15 +3487,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-     30916       3520       8372      13556       3900     618474   Grand Totals
-     30916       3520       8372       1072       3900     618474   ELF Image Totals (compressed)
-     30916       3520       8372       1072          0          0   ROM Totals
+     30936       3520       8372      13556       3900     618486   Grand Totals
+     30936       3520       8372       1072       3900     618486   ELF Image Totals (compressed)
+     30936       3520       8372       1072          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                39288 (  38.37kB)
+    Total RO  Size (Code + RO Data)                39308 (  38.39kB)
     Total RW  Size (RW Data + ZI Data)             17456 (  17.05kB)
-    Total ROM Size (Code + RO Data + RW Data)      40360 (  39.41kB)
+    Total ROM Size (Code + RO Data + RW Data)      40380 (  39.43kB)
 
 ==============================================================================
 
