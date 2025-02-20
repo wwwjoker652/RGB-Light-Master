@@ -1494,7 +1494,7 @@ void setrtc(void){
 			}
 		}
 		OLED_Refresh();
-		if (Button_LongPress(GPIOA, GPIO_PIN_12)) {
+		if (Button_LongPress(GPIOA, GPIO_PIN_11)) {
 			position++;
 			if(position == 5){
 				position = 0;
