@@ -74,7 +74,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x6707FDE5)
 I (../Core/Inc/tim.h)(0x676E9A0F)
 I (../Core/Inc/main.h)(0x67A0C96F)
 I (../Core/Inc/dht11.h)(0x670BE1F3)
-F (..\Core\Src\esp.c)(0x678E3355)(--c99 -c --cpu Cortex-M3 -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_ddds-IC:\Users\31132\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\31132\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\1.1.0\Device\Include-D__UVISION_VERSION="535" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o ddds\esp.o --omf_browse ddds\esp.crf --depend ddds\esp.d)
+F (..\Core\Src\esp.c)(0x67B70595)(--c99 -c --cpu Cortex-M3 -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_ddds-IC:\Users\31132\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\31132\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\1.1.0\Device\Include-D__UVISION_VERSION="535" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o ddds\esp.o --omf_browse ddds\esp.crf --depend ddds\esp.d)
 I (../Core/Inc/esp.h)(0x678E3355)
 I (../Core/Inc/main.h)(0x67A0C96F)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x6707FDE5)
@@ -112,6 +112,9 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x6707FDE5)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x6025237E)
 I (../Core/Inc/usart.h)(0x676CF103)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x60252374)
+I (../Core/Inc/bootanimation.h)(0x67B6F70E)
+I (../Core/Inc/oled.h)(0x676CE545)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x60252374)
 F (..\Core\Src\Flappy_Bird.c)(0x67B18EEC)(--c99 -c --cpu Cortex-M3 -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_ddds-IC:\Users\31132\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\31132\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\1.1.0\Device\Include-D__UVISION_VERSION="535" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o ddds\flappy_bird.o --omf_browse ddds\flappy_bird.crf --depend ddds\flappy_bird.d)
 I (../Core/Inc/Flappy_Bird.h)(0x6785178C)
 I (../Core/Inc/main.h)(0x67A0C96F)
@@ -151,7 +154,7 @@ I (../Core/Inc/oled.h)(0x676CE545)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x60252374)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x60252374)
 I (../Core/Inc/rtc.h)(0x67852206)
-I (../Core/Inc/maintask.h)(0x67B3FD8C)
+I (../Core/Inc/maintask.h)(0x67B6F144)
 I (../Core/Inc/DHT11.h)(0x670BE1F3)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x6025237E)
 I (../Core/Inc/esp.h)(0x678E3355)
@@ -162,8 +165,8 @@ I (../Core/Inc/i2c.h)(0x676CE76F)
 I (../Core/Inc/tim.h)(0x676E9A0F)
 I (../Core/Inc/usart.h)(0x676CF103)
 I (../Core/Inc/gpio.h)(0x676CE76F)
-F (..\Core\Src\maintask.c)(0x67B40C71)(--c99 -c --cpu Cortex-M3 -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_ddds-IC:\Users\31132\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\31132\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\1.1.0\Device\Include-D__UVISION_VERSION="535" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o ddds\maintask.o --omf_browse ddds\maintask.crf --depend ddds\maintask.d)
-I (../Core/Inc/maintask.h)(0x67B3FD8C)
+F (..\Core\Src\maintask.c)(0x67B6FA1D)(--c99 -c --cpu Cortex-M3 -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_ddds-IC:\Users\31132\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\31132\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\1.1.0\Device\Include-D__UVISION_VERSION="535" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o ddds\maintask.o --omf_browse ddds\maintask.crf --depend ddds\maintask.d)
+I (../Core/Inc/maintask.h)(0x67B6F144)
 I (../Core/Inc/OLED.h)(0x676CE545)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x60252374)
 I (../Core/Inc/main.h)(0x67A0C96F)
@@ -298,7 +301,7 @@ I (../Core/Inc/esp.h)(0x678E3355)
 I (../Core/Inc/Flappy_Bird.h)(0x6785178C)
 I (../Core/Inc/my_rtc.h)(0x67960E38)
 I (C:\Keil_v5\ARM\ARMCC\include\time.h)(0x60252378)
-I (../Core/Inc/maintask.h)(0x67B3FD8C)
+I (../Core/Inc/maintask.h)(0x67B6F144)
 F (../Core/Src/gpio.c)(0x67A0C96E)(--c99 -c --cpu Cortex-M3 -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_ddds-IC:\Users\31132\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\31132\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\1.1.0\Device\Include-D__UVISION_VERSION="535" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o ddds\gpio.o --omf_browse ddds\gpio.crf --depend ddds\gpio.d)
 I (../Core/Inc/gpio.h)(0x676CE76F)
 I (../Core/Inc/main.h)(0x67A0C96F)

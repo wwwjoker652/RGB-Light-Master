@@ -37,3 +37,6 @@ ddds\esp.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
 ddds\esp.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 ddds\esp.o: ../Core/Inc/usart.h
 ddds\esp.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+ddds\esp.o: ../Core/Inc/bootanimation.h
+ddds\esp.o: ../Core/Inc/oled.h
+ddds\esp.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h

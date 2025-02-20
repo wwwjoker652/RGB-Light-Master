@@ -32,6 +32,7 @@ uint8_t is_running = 0;
 uint32_t ms_counter = 0;
 
 void beforeall(void){
+
 	OLED_Init();
 	OLED_Clear();
 	HAL_TIM_PWM_Start(&htim3,TIM_CHANNEL_3);
@@ -40,8 +41,6 @@ void beforeall(void){
 	__HAL_TIM_SET_COMPARE(&htim3,TIM_CHANNEL_4,0);
 	HAL_ADC_Start(&hadc2);
 	MY_RTC_Init();
-	OLED_ShowString(10, 20, "Initializing", 16, 1);
-	OLED_Refresh();
 	HAL_UART_Receive_IT(&huart1, (uint8_t *)&aRxBuffer, 1);
 	esp8266_start_trans();
 	OLED_Clear();
