@@ -6,9 +6,12 @@ uint32_t ptime2 = 500;
 uint32_t pwmtime1 = 10;
 uint32_t light = 50;
 uint32_t tempr = 30;
-uint32_t R = 50;
-uint32_t G = 50;
-uint32_t B = 50;
+uint32_t R = 125;
+uint32_t G = 125;
+uint32_t B = 125;
+uint32_t R1 = 0;
+uint32_t G1 = 0;
+uint32_t B1 = 0;
 uint32_t vlight = 1863;
 uint8_t Button_LongPress(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin);
 uint8_t Button_ShortPress(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin);
@@ -17,6 +20,7 @@ uint8_t humidity = 0;
 uint8_t stat = 1;
 uint8_t choice = 1;
 uint32_t pg = 1;
+uint8_t count = 0;
 extern uint8_t Data[5];
 extern DMA_HandleTypeDef hdma_usart1_rx;
 uint8_t receive[50];
@@ -90,10 +94,17 @@ void switchmode(void){
 			if (Button_ShortPress(GPIOA, GPIO_PIN_12)){
 				if(choice == 1){
 					choice = 2;
+					count++;
 				}
 				modes[choice - 1] = 1;
 				choice--;
 				modes[choice - 1] = 0;
+			}
+			if(count){
+				count = 0;
+				modes[0] = 1;
+				modes[10] = 0;
+				choice = 11;
 			}
 			if (Button_LongPress(GPIOA, GPIO_PIN_15)){
 				entermode(choice);
@@ -111,7 +122,8 @@ void switchmode(void){
 			OLED_Refresh();
 			if (Button_ShortPress(GPIOA, GPIO_PIN_11)){
 				if(choice == 11){
-				choice = 10;
+					choice = 10;
+					count++;
 				}
 				modes[choice - 1] = 1;
 				choice++;
@@ -121,6 +133,12 @@ void switchmode(void){
 				modes[choice - 1] = 1;
 				choice--;
 				modes[choice - 1] = 0;
+			}
+			if(count){
+				count = 0;
+				choice = 1;
+				modes[10] = 1;
+				modes[0] = 0;
 			}
 			if (Button_LongPress(GPIOA, GPIO_PIN_15)){
 				entermode(choice);
@@ -533,6 +551,12 @@ void mode3(void){
 			if (Button_LongPress(GPIOB, GPIO_PIN_13)) {
 					setpwm1();
 				}
+			if (Button_LongPress(GPIOB, GPIO_PIN_11)) {
+			__HAL_TIM_SET_COMPARE(&htim3,TIM_CHANNEL_1,50);
+			HAL_TIM_PWM_Stop(&htim3,TIM_CHANNEL_1);
+			OLED_Clear();
+			switchmode();
+				}
 		}
 		for(int i = 99; i>=0;i--){
 			__HAL_TIM_SET_COMPARE(&htim3,TIM_CHANNEL_1,i);
@@ -540,12 +564,12 @@ void mode3(void){
 			if (Button_LongPress(GPIOB, GPIO_PIN_13)) {
 					setpwm1();
 				}
-		}
-		if (Button_LongPress(GPIOB, GPIO_PIN_11)) {
+			if (Button_LongPress(GPIOB, GPIO_PIN_11)) {
 			__HAL_TIM_SET_COMPARE(&htim3,TIM_CHANNEL_1,50);
 			HAL_TIM_PWM_Stop(&htim3,TIM_CHANNEL_1);
 			OLED_Clear();
 			switchmode();
+			}
 		}
 		if(receive_flag)
 		{
@@ -575,10 +599,10 @@ void setpwm1(void){
 	HAL_TIM_PWM_Stop(&htim3,TIM_CHANNEL_1);
 	while(1){
 		OLED_Clear();
-		OLED_ShowString(20, 20, "Setting the", 12, 1);
-		OLED_ShowString(20, 30, "breathing light...", 12, 1);
-		OLED_ShowString(20, 40, "Current:", 12, 1);
-		OLED_ShowString(90, 40, "ms", 12, 1);
+		OLED_ShowString(20, 10, "Setting the", 12, 1);
+		OLED_ShowString(20, 20, "breathing light...", 12, 1);
+		OLED_ShowString(20, 30, "Current:", 12, 1);
+		OLED_ShowString(90, 30, "ms", 12, 1);
 		uint8_t num_digits = 0;
 		uint32_t temp = pwmtime1;
 		while (temp > 0) {
@@ -586,7 +610,10 @@ void setpwm1(void){
 				num_digits++;
 		}
 		if (num_digits == 0) num_digits = 1;
-		OLED_ShowNum(70, 40, pwmtime1, num_digits, 12, 1);
+		OLED_ShowNum(70, 30, pwmtime1, num_digits, 12, 1);
+		OLED_ShowString(20, 40, "Total:", 12, 1);
+		OLED_ShowNum(70, 40, pwmtime1 * 200, 6, 12, 1);
+		OLED_ShowString(110, 40, "ms", 12, 1);
 		OLED_Refresh();
 		HAL_Delay(500);
 		if (Button_ShortPress(GPIOB, GPIO_PIN_14)) {
@@ -1200,10 +1227,13 @@ void mode8(void){
 	OLED_Clear();
 	OLED_ShowString(20, 20, "RGB mode!", 16, 1);
 	OLED_Refresh();
+	R1 = (100*R)/256;
+	G1 = (100*G)/256;
+	B1 = (100*B)/256;
 	while(1){
-		__HAL_TIM_SET_COMPARE(&htim3,TIM_CHANNEL_1,B);
-		__HAL_TIM_SET_COMPARE(&htim3,TIM_CHANNEL_3,G);
-		__HAL_TIM_SET_COMPARE(&htim3,TIM_CHANNEL_4,R);
+		__HAL_TIM_SET_COMPARE(&htim3,TIM_CHANNEL_1,B1);
+		__HAL_TIM_SET_COMPARE(&htim3,TIM_CHANNEL_3,G1);
+		__HAL_TIM_SET_COMPARE(&htim3,TIM_CHANNEL_4,R1);
 		if (Button_LongPress(GPIOB, GPIO_PIN_13)) {
 			HAL_TIM_PWM_Stop(&htim3,TIM_CHANNEL_1);
 			__HAL_TIM_SET_COMPARE(&htim3,TIM_CHANNEL_3,0);
@@ -1264,20 +1294,20 @@ void setrgb(void){
 		if (Button_ShortPress(GPIOB, GPIO_PIN_14)) {
 			 if (stat == 1){ 
 					R += 5;
-					if(R == 105){
-						R = 100;
+					if(R >= 256){
+						R -= 5;
 					}
 					HAL_Delay(500);
 				}else if(stat == 2){
 					G += 5;
-					if(G == 105){
-						G = 100;
+					if(G >= 256){
+						G -= 5;
 					}
 					HAL_Delay(500);
 				}else if(stat == 3){
 					B += 5;
-					if(B == 105){
-						B = 100;
+					if(B >= 256){
+						B -= 5;
 					}
 					HAL_Delay(500);
 			}
@@ -1286,19 +1316,19 @@ void setrgb(void){
 			  if (stat == 1){ 
 					R -= 5;
 					if(R >= 10000){
-						R = 0;
+						R += 5;
 					}
 					HAL_Delay(500);
 				}else if(stat == 2){
 					G -= 5;
 					if(G >= 10000){
-						G = 0;
+						G += 5;
 					}
 					HAL_Delay(500);
 				}else if(stat == 3){
 					B -= 5;
 					if(B >= 10000){
-						B = 0;
+						B += 5;
 					}
 					HAL_Delay(500);
 			}
@@ -1335,15 +1365,20 @@ void setrgb(void){
 				memset(RxBuffer,0x00,sizeof(my_order));	
 				if (stat == 1){ 
 					R += 5;
-					if(R == 105){
-						R = 100;
+					if(R >= 256){
+						R -= 5;
 					}
 				}else if(stat == 2){
 					G += 5;
-					if(G == 105){
-						G = 100;
+					if(G >= 256){
+						G -= 5;
 					}
-				}
+				}else if(stat == 3){
+					B += 5;
+					if(B >= 256){
+						B -= 5;
+					}
+			}
 				esp8266_send_cmd("AT+CIPSEND=0,4","OK",50);
 				esp8266_send_cmd("OK!\n","OK",50);
 			}else if(strstr((const char*)my_order,(const char*)"<->"))
@@ -1354,19 +1389,19 @@ void setrgb(void){
 				if (stat == 1){ 
 					R -= 5;
 					if(R >= 10000){
-						R = 0;
+						R += 5;
 					}
 					HAL_Delay(500);
 				}else if(stat == 2){
 					G -= 5;
 					if(G >= 10000){
-						G = 0;
+						G += 5;
 					}
 					HAL_Delay(500);
 				}else if(stat == 3){
 					B -= 5;
 					if(B >= 10000){
-						B = 0;
+						B += 5;
 					}
 					HAL_Delay(500);
 				}
@@ -1396,7 +1431,7 @@ void setrgb(void){
 				mode8();
 			}else if(sscanf((const char*)my_order, "<%d>", &received_value) == 1)
 					{
-						if(received_value >= 0 && received_value <= 100) // 示例范围限制
+						if(received_value >= 0 && received_value <= 255) // 示例范围限制
 						{
 								Uart2_Rx_Cnt = 0;
 								memset(RxBuffer, 0x00, sizeof(RxBuffer));
